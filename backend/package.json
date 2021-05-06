@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "esbuild src/index.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/index.js",
+    "build:watch": "esbuild src/index.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/index.js --watch",
+    "dev": "run-p build:watch start",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,11 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.15.1"
+    "fastify": "^3.15.1",
+    "fastify-oauth2": "^4.2.1"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.0",
     "@types/node": "^15.0.1",
+    "dotenv": "^9.0.0",
+    "esbuild": "^0.11.19",
+    "npm-run-all": "^4.1.5",
     "typescript": "^4.2.4"
   }
 }
