@@ -161,4 +161,4 @@ Project Link: [https://github.com/chrisparsons83/flexspotff.com](https://github.
 [issues-shield]: https://img.shields.io/github/issues/chrisparsons83/flexspotff.com.svg?style=for-the-badge
 [issues-url]: https://github.com/chrisparsons83/flexspotff.com/issues
 [license-shield]: https://img.shields.io/github/license/chrisparsons83/flexspotff.com.svg?style=for-the-badge
-[license-url]: https://github.com/chrisparsons83/flexspotff.com/blob/master/LICENSE.txt
+[license-url]: https://github.com/chrisparsons83/flexspotff.com/blob/master/LICENSE.md
