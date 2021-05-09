@@ -1,0 +1,20 @@
+
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: flexspotffcom_dev
+      POSTGRES_PASSWORD: dev_password
+    ports:
+      - 5432:5432
+    networks:
+      - code-network
+    volumes:
+      - ./.db-load:/docker-entrypoint-initdb.d
+
+networks:
+  code-network:
+    driver: bridge
