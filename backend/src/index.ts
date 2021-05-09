@@ -20,9 +20,9 @@ server.register(oauthPlugin, {
     },
     auth: oauthPlugin.DISCORD_CONFIGURATION,
   },
-  // register a fastify url to start the redirect flow
+  // Register a fastify url to start the redirect flow.
   startRedirectPath: '/login/discord',
-  // facebook redirect here after the user login
+  // Discord redirect here after the user login.
   callbackUri: `${process.env.BACKEND_URL}/login/discord/callback`,
   scope: ['identify'],
 });
@@ -39,7 +39,7 @@ server.get('/login/discord/callback', {}, async (request, reply) => {
       process.exit(1);
     });
 
-  // Get user information
+  // Get user information.
   const headers = {
     Authorization: `${token.token_type} ${token.access_token}`,
   };
@@ -57,7 +57,7 @@ server.get('/login/discord/callback', {}, async (request, reply) => {
 
   // Check to see if user exists.
 
-  // Redirect to a route serving HTML or to your front-end
+  // Redirect to a route serving HTML or to your front-end.
   reply.redirect(`${process.env.FRONTEND_URL}/`);
 });
 
