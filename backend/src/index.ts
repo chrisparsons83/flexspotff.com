@@ -8,7 +8,7 @@ dotenv.config();
 
 // Start fastify server.
 const server = fastify({
-  logger: true
+  logger: true,
 });
 
 server.register(oauthPlugin, {
@@ -29,24 +29,26 @@ server.register(oauthPlugin, {
 
 // Leave this in as a bit of a smoke test for now.
 // TODO: Remove this when not needed anymore.
-server.get('/ping', async (request, reply) => {
-  return 'pong\n';
-});
+server.get('/ping', async () => 'pong');
 
 server.get('/login/discord/callback', {}, async (request, reply) => {
-  const token = await server.discordOAuth2.getAccessTokenFromAuthorizationCodeFlow(request).catch((err) => {
-    server.log.error(err);
-    process.exit(1);
-  });
+  const token = await server.discordOAuth2
+    .getAccessTokenFromAuthorizationCodeFlow(request)
+    .catch((err) => {
+      server.log.error(err);
+      process.exit(1);
+    });
 
   // Get user information
   const headers = {
-    Authorization: `${token.token_type} ${token.access_token}`
-  }
-  const userResponse = await fetch('https://discord.com/api/users/@me', { headers }).catch((err) => {
-    server.log.error(err);
-    process.exit(1);
-  });
+    Authorization: `${token.token_type} ${token.access_token}`,
+  };
+  const userResponse = await fetch('https://discord.com/api/users/@me', { headers }).catch(
+    (err) => {
+      server.log.error(err);
+      process.exit(1);
+    },
+  );
   const user = await userResponse.json().catch((err) => {
     server.log.error(err);
     process.exit(1);
@@ -59,10 +61,9 @@ server.get('/login/discord/callback', {}, async (request, reply) => {
   reply.redirect(`${process.env.FRONTEND_URL}/`);
 });
 
-server.listen(8080, (err, address) => {
+server.listen(8080, (err) => {
   if (err) {
-    console.error(err);
+    server.log.error(err);
     process.exit(1);
   }
-  console.log(`Server listening at ${address}`);
 });

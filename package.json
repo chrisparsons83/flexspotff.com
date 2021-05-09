@@ -1,0 +1,29 @@
+{
+  "name": "flexspotff.com",
+  "version": "1.0.0",
+  "description": "Website for FlexSpot Fantasy Community.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisparsons83/flexspotff.com.git"
+  },
+  "keywords": [],
+  "author": "Chris Parsons <chris@chris-parsons.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisparsons83/flexspotff.com/issues"
+  },
+  "homepage": "https://github.com/chrisparsons83/flexspotff.com#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1"
+  }
+}
