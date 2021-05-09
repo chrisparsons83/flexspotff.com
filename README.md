@@ -152,13 +152,13 @@ Project Link: [https://github.com/chrisparsons83/flexspotff.com](https://github.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/chrisparsons83/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/chrisparsons83/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/chrisparsons83/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/chrisparsons83/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/chrisparsons83/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/chrisparsons83/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/chrisparsons83/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/chrisparsons83/repo/issues
-[license-shield]: https://img.shields.io/github/license/chrisparsons83/repo.svg?style=for-the-badge
-[license-url]: https://github.com/chrisparsons83/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/chrisparsons83/flexspotff.com.svg?style=for-the-badge
+[contributors-url]: https://github.com/chrisparsons83/flexspotff.com/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/chrisparsons83/flexspotff.com.svg?style=for-the-badge
+[forks-url]: https://github.com/chrisparsons83/flexspotff.com/network/members
+[stars-shield]: https://img.shields.io/github/stars/chrisparsons83/flexspotff.com.svg?style=for-the-badge
+[stars-url]: https://github.com/chrisparsons83/flexspotff.com/stargazers
+[issues-shield]: https://img.shields.io/github/issues/chrisparsons83/flexspotff.com.svg?style=for-the-badge
+[issues-url]: https://github.com/chrisparsons83/flexspotff.com/issues
+[license-shield]: https://img.shields.io/github/license/chrisparsons83/flexspotff.com.svg?style=for-the-badge
+[license-url]: https://github.com/chrisparsons83/flexspotff.com/blob/master/LICENSE.txt
