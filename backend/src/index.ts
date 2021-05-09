@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import fastify from 'fastify';
+import fetch from 'node-fetch';
 import oauthPlugin from 'fastify-oauth2';
 
 // Load env file first.
@@ -33,10 +34,18 @@ server.get('/ping', async (request, reply) => {
 server.get('/login/discord/callback', {}, async (request, reply) => {
   const token = await server.discordOAuth2.getAccessTokenFromAuthorizationCodeFlow(request)
 
-  console.log(token); // Just for debugging
+  // Get user information
+  const headers = {
+    Authorization: `${token.token_type} ${token.access_token}`
+  }
+  const userResponse = await fetch('https://discord.com/api/users/@me', { headers });
+  const user = await userResponse.json();
+  console.log(user);
+
+  // Check to see if user exists.
 
   // Redirect to a route serving HTML or to your front-end
-  reply.redirect(`${process.env.FRONTEND_URL}/?token=`);
+  reply.redirect(`${process.env.FRONTEND_URL}/`);
 });
 
 server.listen(8080, (err, address) => {
