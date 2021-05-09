@@ -7,7 +7,9 @@ import oauthPlugin from 'fastify-oauth2';
 dotenv.config();
 
 // Start fastify server.
-const server = fastify();
+const server = fastify({
+  logger: true
+});
 
 server.register(oauthPlugin, {
   name: 'discordOAuth2',
@@ -32,14 +34,23 @@ server.get('/ping', async (request, reply) => {
 });
 
 server.get('/login/discord/callback', {}, async (request, reply) => {
-  const token = await server.discordOAuth2.getAccessTokenFromAuthorizationCodeFlow(request)
+  const token = await server.discordOAuth2.getAccessTokenFromAuthorizationCodeFlow(request).catch((err) => {
+    server.log.error(err);
+    process.exit(1);
+  });
 
   // Get user information
   const headers = {
     Authorization: `${token.token_type} ${token.access_token}`
   }
-  const userResponse = await fetch('https://discord.com/api/users/@me', { headers });
-  const user = await userResponse.json();
+  const userResponse = await fetch('https://discord.com/api/users/@me', { headers }).catch((err) => {
+    server.log.error(err);
+    process.exit(1);
+  });
+  const user = await userResponse.json().catch((err) => {
+    server.log.error(err);
+    process.exit(1);
+  });
   console.log(user);
 
   // Check to see if user exists.
