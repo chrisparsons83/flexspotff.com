@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const Home = () => {
+const Home = (): JSX.Element => {
   return (
     <div className="container mx-auto">
       <Head>
