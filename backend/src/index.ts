@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import fastify from 'fastify';
+import cookie, { FastifyCookieOptions } from 'fastify-cookie';
 import fetch from 'node-fetch';
+import jwt from 'jsonwebtoken';
 import oauthPlugin from 'fastify-oauth2';
 
 // Load env file first.
@@ -11,6 +13,13 @@ const server = fastify({
   logger: true,
 });
 
+// Setup Fastify Cookie
+server.register(cookie, {
+  secret: process.env.FASTIFY_COOKIE_KEY, // for cookies signature
+  parseOptions: {}, // options for parsing cookies
+} as FastifyCookieOptions);
+
+// Setup OAuth2
 server.register(oauthPlugin, {
   name: 'discordOAuth2',
   credentials: {
@@ -53,12 +62,25 @@ server.get('/login/discord/callback', {}, async (request, reply) => {
     server.log.error(err);
     process.exit(1);
   });
-  console.log(user);
 
-  // Check to see if user exists.
+  // TODO: Check to see if user exists.
+
+  // Create JWT.
+  const userToken = jwt.sign(
+    {
+      user,
+    },
+    process.env.JWT_KEY,
+    { expiresIn: '7d' },
+  );
 
   // Redirect to a route serving HTML or to your front-end.
-  reply.redirect(`${process.env.FRONTEND_URL}/`);
+  reply
+    .cookie('token', userToken, {
+      domain: process.env.COOKIE_DOMAIN,
+      path: '/',
+    })
+    .redirect(`${process.env.FRONTEND_URL}`);
 });
 
 server.listen(8080, (err) => {
