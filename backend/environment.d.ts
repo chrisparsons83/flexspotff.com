@@ -11,7 +11,6 @@ declare global {
   }
 }
 
-
 declare module 'fastify' {
   interface FastifyInstance {
     discordOAuth2: OAuth2Namespace;
