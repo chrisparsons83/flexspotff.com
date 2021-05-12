@@ -4,7 +4,7 @@ const LeaguesPage = (): JSX.Element => {
   const data = useUser();
 
   if (data.isError) return data.isError;
-  return <div>Leagues Page</div>;
+  return <h1>Leagues Page</h1>;
 };
 
 export default LeaguesPage;
