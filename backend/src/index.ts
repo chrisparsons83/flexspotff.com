@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import fastify from 'fastify';
 import cookie, { FastifyCookieOptions } from 'fastify-cookie';
+import fastifyCors from 'fastify-cors';
 import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 import oauthPlugin from 'fastify-oauth2';
@@ -11,6 +12,11 @@ dotenv.config();
 // Start fastify server.
 const server = fastify({
   logger: true,
+});
+
+// Setup CORS.
+server.register(fastifyCors, {
+  origin: '*',
 });
 
 // Setup Fastify Cookie
@@ -38,7 +44,9 @@ server.register(oauthPlugin, {
 
 // Leave this in as a bit of a smoke test for now.
 // TODO: Remove this when not needed anymore.
-server.get('/ping', async () => 'pong');
+server.get('/ping', async () => {
+  return { message: 'pong' };
+});
 
 server.get('/login/discord/callback', {}, async (request, reply) => {
   const token = await server.discordOAuth2
