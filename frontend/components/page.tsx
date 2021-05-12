@@ -8,7 +8,7 @@ const Page = ({ children }: ComponentProps): JSX.Element => {
   return (
     <div>
       <Header />
-      {children}
+      <main className="prose prose-sm prose-purple">{children}</main>
     </div>
   );
 };
