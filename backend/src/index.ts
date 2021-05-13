@@ -6,6 +6,8 @@ import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 import oauthPlugin from 'fastify-oauth2';
 
+import { getAllLeagues, getLeague, League, Leagues } from './controller/leagues';
+
 // Load env file first.
 dotenv.config();
 
@@ -40,12 +42,6 @@ server.register(oauthPlugin, {
   // Discord redirect here after the user login.
   callbackUri: `${process.env.BACKEND_URL}/login/discord/callback`,
   scope: ['identify'],
-});
-
-// Leave this in as a bit of a smoke test for now.
-// TODO: Remove this when not needed anymore.
-server.get('/ping', async () => {
-  return { message: 'pong' };
 });
 
 server.get('/login/discord/callback', {}, async (request, reply) => {
@@ -90,6 +86,30 @@ server.get('/login/discord/callback', {}, async (request, reply) => {
     })
     .redirect(`${process.env.FRONTEND_URL}`);
 });
+
+// Leave this in as a bit of a smoke test for now.
+// TODO: Remove this when not needed anymore.
+server.get('/ping', async () => {
+  return { message: 'pong' };
+});
+
+// Setup Leagues endpoints
+const leaguesOpts = {
+  schema: {
+    response: {
+      200: Leagues,
+    },
+  },
+};
+server.get('/leagues', leaguesOpts, getAllLeagues);
+const leagueOpts = {
+  schema: {
+    response: {
+      200: League,
+    },
+  },
+};
+server.get('/leagues/:leagueid', leagueOpts, getLeague);
 
 server.listen(8080, (err) => {
   if (err) {
