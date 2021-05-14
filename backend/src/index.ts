@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 import oauthPlugin from 'fastify-oauth2';
 
-import { getAllLeagues, getLeague, League, Leagues } from './controller/leagues';
+import leagueRoutes from './routes/leagues';
 
 // Load env file first.
 dotenv.config();
@@ -94,22 +94,9 @@ server.get('/ping', async () => {
 });
 
 // Setup Leagues endpoints
-const leaguesOpts = {
-  schema: {
-    response: {
-      200: Leagues,
-    },
-  },
-};
-server.get('/leagues', leaguesOpts, getAllLeagues);
-const leagueOpts = {
-  schema: {
-    response: {
-      200: League,
-    },
-  },
-};
-server.get('/leagues/:leagueid', leagueOpts, getLeague);
+leagueRoutes.forEach((route) => {
+  server.route(route);
+});
 
 server.listen(8080, (err) => {
   if (err) {
