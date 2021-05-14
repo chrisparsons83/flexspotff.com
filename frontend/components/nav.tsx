@@ -5,6 +5,7 @@ const Nav = (): JSX.Element => {
     <nav>
       <Link href="/">Home</Link>
       <Link href="/leagues">Leagues</Link>
+      <Link href="/games">Games</Link>
     </nav>
   );
 };
