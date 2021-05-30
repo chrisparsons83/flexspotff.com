@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import dotenv from 'dotenv';
 import fastify from 'fastify';
 import cookie, { FastifyCookieOptions } from 'fastify-cookie';
@@ -5,6 +6,8 @@ import fastifyCors from 'fastify-cors';
 import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 import oauthPlugin from 'fastify-oauth2';
+
+import mikroorm from './mikro-orm';
 
 import leagueRoutes from './routes/leagues';
 
@@ -26,6 +29,9 @@ server.register(cookie, {
   secret: process.env.FASTIFY_COOKIE_KEY, // for cookies signature
   parseOptions: {}, // options for parsing cookies
 } as FastifyCookieOptions);
+
+// Setup MikroORM
+server.register(mikroorm);
 
 // Setup OAuth2
 server.register(oauthPlugin, {
