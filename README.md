@@ -71,6 +71,7 @@ This is the website for the FlexSpot Fantasy Football community.
 ### Built With
 
 - [Fastify](https://www.fastify.io/)
+- [MikroORM](https://www.mikro-orm.io/)
 - [NextJS](https://nextjs.org/)
 
 <!-- GETTING STARTED -->
@@ -107,7 +108,7 @@ TODO: Update this copy.
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Changes to the database schema are done via [MikroORM Migrations](https://mikro-orm.io/docs/migrations/).
 
 <!-- ROADMAP -->
 

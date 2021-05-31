@@ -8,4 +8,10 @@ export default class League extends BaseEntity {
 
   @Property()
   season!: number;
+
+  @Property()
+  sleeperUrl!: string;
+
+  @Property()
+  isActive!: boolean;
 }
