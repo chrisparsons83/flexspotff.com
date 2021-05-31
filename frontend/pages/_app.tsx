@@ -2,7 +2,7 @@ import 'tailwindcss/tailwind.css';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 
 import '../components/styles/global.css';
-import Page from '../components/page';
+import Page from '../components/Page';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
