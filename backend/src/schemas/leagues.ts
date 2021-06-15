@@ -10,5 +10,10 @@ const getLeaguesSchema = {
     '2xx': leaguesController.Leagues,
   },
 };
+const setLeagueSchema = {
+  response: {
+    '2xx': leaguesController.League,
+  },
+};
 
-export { getLeagueSchema, getLeaguesSchema };
+export { getLeagueSchema, getLeaguesSchema, setLeagueSchema };

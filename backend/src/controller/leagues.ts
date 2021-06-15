@@ -26,4 +26,8 @@ const getLeague = async (): Promise<LeagueType> => {
   return leagues[0];
 };
 
-export { getLeague, getAllLeagues, League, Leagues, LeagueType, LeaguesType };
+const setLeague = async (): Promise<LeagueType> => {
+  return leagues[0];
+};
+
+export { getLeague, getAllLeagues, setLeague, League, Leagues, LeagueType, LeaguesType };
