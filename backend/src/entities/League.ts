@@ -13,5 +13,12 @@ export default class League extends BaseEntity {
   sleeperUrl!: string;
 
   @Property()
-  isActive!: boolean;
+  isActive = true;
+
+  constructor(name: string, season: number, sleeperUrl: string) {
+    super();
+    this.name = name;
+    this.season = season;
+    this.sleeperUrl = sleeperUrl;
+  }
 }
