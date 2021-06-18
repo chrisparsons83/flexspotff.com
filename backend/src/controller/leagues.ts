@@ -11,14 +11,14 @@ const League = Type.Object({
   isActive: Type.Boolean(),
   name: Type.String(),
   season: Type.Number(),
-  sleeperUrl: Type.String(),
+  sleeperId: Type.String(),
   _id: Type.Number(),
 });
 const Leagues = Type.Array(League);
 const LeagueBody = Type.Object({
   name: Type.String(),
   season: Type.Number(),
-  sleeperUrl: Type.String(),
+  sleeperId: Type.String(),
 });
 type LeagueType = Static<typeof League>;
 type LeaguesType = Static<typeof Leagues>;
@@ -54,7 +54,7 @@ type SetLeagueRequest = FastifyRequest<{
   Body: {
     name: string;
     season: number;
-    sleeperUrl: string;
+    sleeperId: string;
   };
 }>;
 
@@ -62,8 +62,8 @@ const setLeague = async function setLeague(
   this: FastifyInstance,
   req: SetLeagueRequest,
 ): Promise<LeagueType> {
-  const { name, season, sleeperUrl } = req.body;
-  const newLeague = new LeagueEntity(name, season, sleeperUrl);
+  const { name, season, sleeperId } = req.body;
+  const newLeague = new LeagueEntity(name, season, sleeperId);
   await this.mikroorm.em.persistAndFlush(newLeague);
   return newLeague;
 };
