@@ -1,4 +1,5 @@
 import { Static, Type } from '@sinclair/typebox';
+import { BadRequest, NotFound } from 'http-errors';
 import { FastifyInstance } from 'fastify';
 
 import LeagueEntity from '../entities/League';
@@ -22,10 +23,20 @@ const getAllLeagues = async function getAllLeagues(this: FastifyInstance): Promi
   return leagues;
 };
 
-// TODO: Hook up to id in query
+// TODO: Hook up to param.
 const getLeague = async function getLeague(this: FastifyInstance): Promise<LeagueType | null> {
-  const league = await this.mikroorm.em.findOne(LeagueEntity, 3);
-  return league;
+  try {
+    const { id } = { id: 3 };
+    const league = await this.mikroorm.em.findOne(LeagueEntity, id);
+
+    if (!league) {
+      throw new NotFound();
+    }
+
+    return league;
+  } catch (e) {
+    throw new BadRequest(e);
+  }
 };
 
 // TODO: Get information from POST.
