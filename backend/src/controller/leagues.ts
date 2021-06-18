@@ -1,8 +1,8 @@
+import { QueryOrder } from '@mikro-orm/core';
 import { Static, Type } from '@sinclair/typebox';
 import { BadRequest, NotFound } from 'http-errors';
 import { FastifyInstance, FastifyRequest } from 'fastify';
 
-import { QueryOrder } from '@mikro-orm/core';
 import LeagueEntity from '../entities/League';
 
 // TODO: Get rid of the Type.Any() here.
