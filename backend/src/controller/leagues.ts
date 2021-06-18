@@ -2,6 +2,7 @@ import { Static, Type } from '@sinclair/typebox';
 import { BadRequest, NotFound } from 'http-errors';
 import { FastifyInstance, FastifyRequest } from 'fastify';
 
+import { QueryOrder } from '@mikro-orm/core';
 import LeagueEntity from '../entities/League';
 
 // TODO: Get rid of the Type.Any() here.
@@ -27,7 +28,11 @@ type LeagueType = Static<typeof League>;
 type LeaguesType = Static<typeof Leagues>;
 
 const getAllLeagues = async function getAllLeagues(this: FastifyInstance): Promise<LeagueType[]> {
-  const leagues = await this.mikroorm.em.find(LeagueEntity, {});
+  const leagues = await this.mikroorm.em.find(
+    LeagueEntity,
+    {},
+    { orderBy: { tier: QueryOrder.ASC, name: QueryOrder.ASC } },
+  );
   return leagues;
 };
 
