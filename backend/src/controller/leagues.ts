@@ -15,6 +15,11 @@ const League = Type.Object({
   _id: Type.Number(),
 });
 const Leagues = Type.Array(League);
+const LeagueBody = Type.Object({
+  name: Type.String(),
+  season: Type.Number(),
+  sleeperUrl: Type.String(),
+});
 type LeagueType = Static<typeof League>;
 type LeaguesType = Static<typeof Leagues>;
 
@@ -63,4 +68,13 @@ const setLeague = async function setLeague(
   return newLeague;
 };
 
-export { getLeague, getAllLeagues, setLeague, League, Leagues, LeagueType, LeaguesType };
+export {
+  getLeague,
+  getAllLeagues,
+  setLeague,
+  League,
+  Leagues,
+  LeagueBody,
+  LeagueType,
+  LeaguesType,
+};

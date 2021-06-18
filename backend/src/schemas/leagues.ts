@@ -11,6 +11,7 @@ const getLeaguesSchema = {
   },
 };
 const setLeagueSchema = {
+  body: leaguesController.LeagueBody,
   response: {
     '2xx': leaguesController.League,
   },
