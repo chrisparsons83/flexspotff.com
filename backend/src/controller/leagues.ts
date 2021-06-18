@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 import { BadRequest, NotFound } from 'http-errors';
-import { FastifyInstance } from 'fastify';
+import { FastifyInstance, FastifyRequest } from 'fastify';
 
 import LeagueEntity from '../entities/League';
 
@@ -23,10 +23,16 @@ const getAllLeagues = async function getAllLeagues(this: FastifyInstance): Promi
   return leagues;
 };
 
-// TODO: Hook up to param.
-const getLeague = async function getLeague(this: FastifyInstance): Promise<LeagueType | null> {
+type GetLeagueRequest = FastifyRequest<{
+  Params: { id: number };
+}>;
+
+const getLeague = async function getLeague(
+  this: FastifyInstance,
+  req: GetLeagueRequest,
+): Promise<LeagueType | null> {
   try {
-    const { id } = { id: 3 };
+    const { id } = req.params;
     const league = await this.mikroorm.em.findOne(LeagueEntity, id);
 
     if (!league) {
@@ -39,13 +45,20 @@ const getLeague = async function getLeague(this: FastifyInstance): Promise<Leagu
   }
 };
 
-// TODO: Get information from POST.
-const setLeague = async function setLeague(this: FastifyInstance): Promise<LeagueType> {
-  const newLeague = new LeagueEntity(
-    'Admiral',
-    2020,
-    'https://sleeper.app/leagues/601317479402237952',
-  );
+type SetLeagueRequest = FastifyRequest<{
+  Body: {
+    name: string;
+    season: number;
+    sleeperUrl: string;
+  };
+}>;
+
+const setLeague = async function setLeague(
+  this: FastifyInstance,
+  req: SetLeagueRequest,
+): Promise<LeagueType> {
+  const { name, season, sleeperUrl } = req.body;
+  const newLeague = new LeagueEntity(name, season, sleeperUrl);
   await this.mikroorm.em.persistAndFlush(newLeague);
   return newLeague;
 };
