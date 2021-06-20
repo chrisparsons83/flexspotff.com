@@ -10,6 +10,7 @@ import oauthPlugin from 'fastify-oauth2';
 import mikroorm from './mikro-orm';
 
 import leagueRoutes from './routes/leagues';
+import teamRoutes from './routes/teams';
 
 // Load env file first.
 dotenv.config();
@@ -101,6 +102,10 @@ server.get('/ping', async () => {
 
 // Setup Leagues endpoints
 leagueRoutes.forEach((route) => {
+  server.route(route);
+});
+// Setup Teams endpoints
+teamRoutes.forEach((route) => {
   server.route(route);
 });
 
