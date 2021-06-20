@@ -1,5 +1,7 @@
-import { Entity, Property } from '@mikro-orm/core';
+import { Collection, Entity, OneToMany, Property } from '@mikro-orm/core';
 import BaseEntity from './BaseEntity';
+
+import Team from './Team';
 
 @Entity()
 export default class League extends BaseEntity {
@@ -14,6 +16,9 @@ export default class League extends BaseEntity {
 
   @Property({ default: 2 })
   tier!: number;
+
+  @OneToMany({ entity: () => Team, mappedBy: 'league', orphanRemoval: true })
+  teams = new Collection<Team>(this);
 
   @Property({ type: 'boolean' })
   isActive = true;
