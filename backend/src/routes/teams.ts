@@ -1,7 +1,13 @@
 import { RouteOptions } from 'fastify';
 import * as teamsController from '../controller/teams';
-import { setTeamSchema } from '../schemas/teams';
+import { getTeamsSchema, setTeamSchema } from '../schemas/teams';
 
+const getTeamsRoute: RouteOptions = {
+  method: 'GET',
+  url: '/teams',
+  handler: teamsController.getAllTeams,
+  schema: getTeamsSchema,
+};
 const setTeamRoute: RouteOptions = {
   method: 'POST',
   url: '/teams',
@@ -9,6 +15,6 @@ const setTeamRoute: RouteOptions = {
   schema: setTeamSchema,
 };
 
-const routes = [setTeamRoute];
+const routes = [getTeamsRoute, setTeamRoute];
 
 export default routes;

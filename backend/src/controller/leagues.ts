@@ -59,12 +59,7 @@ const getLeague = async function getLeague(
 };
 
 type SetLeagueRequest = FastifyRequest<{
-  Body: {
-    name: string;
-    season: number;
-    sleeperId: string;
-    tier?: number;
-  };
+  Body: LeagueType;
 }>;
 
 const setLeague = async function setLeague(
