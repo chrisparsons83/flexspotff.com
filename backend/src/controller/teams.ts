@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 import { FastifyInstance, FastifyRequest } from 'fastify';
-import { BadRequest } from 'http-errors';
+import { BadRequest, NotFound } from 'http-errors';
 
 import LeagueEntity from '../entities/League';
 import TeamEntity from '../entities/Team';
@@ -22,9 +22,34 @@ type TeamType = Static<typeof Team>;
 type TeamsType = Static<typeof Teams>;
 
 const getAllTeams = async function getAllTeams(this: FastifyInstance): Promise<TeamType[]> {
-  const teams = await this.mikroorm.em.find(TeamEntity, {});
+  try {
+    const teams = await this.mikroorm.em.find(TeamEntity, {});
 
-  return teams;
+    return teams;
+  } catch (e) {
+    throw new BadRequest(e);
+  }
+};
+
+type GetTeamRequest = FastifyRequest<{
+  Params: { id: number };
+}>;
+const getTeam = async function getTeam(
+  this: FastifyInstance,
+  req: GetTeamRequest,
+): Promise<TeamType> {
+  try {
+    const { id } = req.params;
+    const team = await this.mikroorm.em.findOne(TeamEntity, id);
+
+    if (!team) {
+      throw new NotFound();
+    }
+
+    return team;
+  } catch (e) {
+    throw new BadRequest(e);
+  }
 };
 
 type SetTeamRequest = FastifyRequest<{
@@ -49,4 +74,4 @@ const setTeam = async function setTeam(
   return newTeam;
 };
 
-export { getAllTeams, setTeam, NewTeam, Team, Teams, NewTeamType, TeamType, TeamsType };
+export { getAllTeams, getTeam, setTeam, NewTeam, Team, Teams, NewTeamType, TeamType, TeamsType };
