@@ -1,26 +1,31 @@
-import { RouteOptions } from 'fastify';
+// import { RouteOptions } from 'fastify';
+import { FastifyPluginAsync } from 'fastify';
+import fastifyPlugin from 'fastify-plugin';
+
 import * as teamsController from '../controller/teams';
 import { getTeamSchema, getTeamsSchema, setTeamSchema } from '../schemas/teams';
 
-const getTeamsRoute: RouteOptions = {
-  method: 'GET',
-  url: '/teams',
-  handler: teamsController.getAllTeams,
-  schema: getTeamsSchema,
-};
-const getTeamRoute: RouteOptions = {
-  method: 'GET',
-  url: '/teams/:id',
-  handler: teamsController.getTeam,
-  schema: getTeamSchema,
-};
-const setTeamRoute: RouteOptions = {
-  method: 'POST',
-  url: '/teams',
-  handler: teamsController.setTeam,
-  schema: setTeamSchema,
+const teams: FastifyPluginAsync = async (fastify): Promise<void> => {
+  fastify.route({
+    method: 'GET',
+    url: '/teams',
+    schema: getTeamsSchema,
+    handler: teamsController.getAllTeams,
+  });
+
+  fastify.route({
+    method: 'GET',
+    url: '/teams/:id',
+    schema: getTeamSchema,
+    handler: teamsController.getTeam,
+  });
+
+  fastify.route({
+    method: 'POST',
+    url: '/teams',
+    schema: setTeamSchema,
+    handler: teamsController.setTeam,
+  });
 };
 
-const routes = [getTeamsRoute, getTeamRoute, setTeamRoute];
-
-export default routes;
+export default fastifyPlugin(teams);

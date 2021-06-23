@@ -9,8 +9,8 @@ import oauthPlugin from 'fastify-oauth2';
 
 import mikroorm from './mikro-orm';
 
-import leagueRoutes from './routes/leagues';
-import teamRoutes from './routes/teams';
+import leaguesRoutes from './routes/leagues';
+import teamsRoutes from './routes/teams';
 
 // Load env file first.
 dotenv.config();
@@ -94,20 +94,10 @@ server.get('/login/discord/callback', {}, async (request, reply) => {
     .redirect(`${process.env.FRONTEND_URL}`);
 });
 
-// Leave this in as a bit of a smoke test for now.
-// TODO: Remove this when not needed anymore.
-server.get('/ping', async () => {
-  return { message: 'pong' };
-});
-
 // Setup Leagues endpoints
-leagueRoutes.forEach((route) => {
-  server.route(route);
-});
+server.register(leaguesRoutes, {});
 // Setup Teams endpoints
-teamRoutes.forEach((route) => {
-  server.route(route);
-});
+server.register(teamsRoutes, {});
 
 server.listen(8080, (err) => {
   if (err) {

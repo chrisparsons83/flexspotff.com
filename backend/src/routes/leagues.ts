@@ -1,26 +1,30 @@
-import { RouteOptions } from 'fastify';
+import { FastifyPluginAsync } from 'fastify';
+import fastifyPlugin from 'fastify-plugin';
+
 import * as leaguesController from '../controller/leagues';
-import { getLeagueSchema, getLeaguesSchema, setLeagueSchema } from '../schemas/leagues';
+import { getLeaguesSchema, getLeagueSchema, setLeagueSchema } from '../schemas/leagues';
 
-const getLeaguesRoute: RouteOptions = {
-  method: 'GET',
-  url: '/leagues',
-  handler: leaguesController.getAllLeagues,
-  schema: getLeaguesSchema,
-};
-const getLeagueRoute: RouteOptions = {
-  method: 'GET',
-  url: '/leagues/:id',
-  handler: leaguesController.getLeague,
-  schema: getLeagueSchema,
-};
-const setLeagueRoute: RouteOptions = {
-  method: 'POST',
-  url: '/leagues',
-  handler: leaguesController.setLeague,
-  schema: setLeagueSchema,
+const leagues: FastifyPluginAsync = async (fastify): Promise<void> => {
+  fastify.route({
+    method: 'GET',
+    url: '/leagues',
+    schema: getLeaguesSchema,
+    handler: leaguesController.getAllLeagues,
+  });
+
+  fastify.route({
+    method: 'GET',
+    url: '/leagues/:id',
+    schema: getLeagueSchema,
+    handler: leaguesController.getLeague,
+  });
+
+  fastify.route({
+    method: 'POST',
+    url: '/leagues',
+    schema: setLeagueSchema,
+    handler: leaguesController.setLeague,
+  });
 };
 
-const routes = [getLeaguesRoute, getLeagueRoute, setLeagueRoute];
-
-export default routes;
+export default fastifyPlugin(leagues);
