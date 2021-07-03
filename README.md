@@ -88,6 +88,7 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
+- Optional: docker and docker-compose.
 
 ### Installation
 
@@ -95,9 +96,19 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/chrisparsons83/flexspotff.com.git
    ```
-2. Install NPM packages
+2. Switch to working directory, and install NPM packages for both frontend and backend
    ```sh
-   npm install
+   npm run install:frontend
+   npm run install:backend
+   ```
+3. Run the database. You can get a sql dump and put it in .db-load before running.
+   ```sh
+   docker-compose -d up
+   ```
+4. If you want to start from a clean database, you can run migrate:up using Mikro ORM.
+   ```sh
+   cd backend
+   npx mikro-orm migration:up
    ```
 
 <!-- USAGE EXAMPLES -->
