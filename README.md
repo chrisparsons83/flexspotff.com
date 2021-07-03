@@ -105,7 +105,16 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    docker-compose -d up
    ```
-4. If you want to start from a clean database, you can run migrate:up using Mikro ORM.
+4. Set your environmental variables. For dev, you'll likely just want to use the .env setup.
+   ```sh
+   cp ./backend/.env.sample ./backend/.env
+   ```
+   - Update the following variables when you make this copy:
+     - DISCORD_CLIENT_ID
+     - DISCORD_CLIENT_SECRET
+     - FASTIFY_COOKIE_KEY: any random string
+     - JWT_KEY: any other random string
+5. If you want to start from a clean database, you can run migrate:up using Mikro ORM.
    ```sh
    cd backend
    npx mikro-orm migration:up
