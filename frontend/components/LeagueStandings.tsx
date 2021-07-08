@@ -1,9 +1,13 @@
 import React from 'react';
 
-const LeagueStandings: React.FC = () => {
+type Props = {
+  leagueName: string;
+};
+
+const LeagueStandings: React.FC<Props> = ({ leagueName }) => {
   return (
     <div>
-      <h2>Champions League</h2>
+      <h2>{leagueName}</h2>
       <table>
         <thead>
           <tr className="bg-gray-900 text-gray-400">
