@@ -96,8 +96,9 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/chrisparsons83/flexspotff.com.git
    ```
-2. Switch to working directory, and install NPM packages for both frontend and backend
+2. Switch to working directory, and install NPM packages for both frontend and backend. (This probably should be wrapped in an npm script)
    ```sh
+   npm install
    npm run install:frontend
    npm run install:backend
    ```
