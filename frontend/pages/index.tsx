@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const Home = (): JSX.Element => {
+const Home: React.FC = () => {
   return (
     <div className="container mx-auto">
       <Head>

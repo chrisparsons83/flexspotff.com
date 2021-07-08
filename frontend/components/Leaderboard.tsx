@@ -1,4 +1,4 @@
-const Leaderboard = (): JSX.Element => {
+const Leaderboard: React.FC = () => {
   return <div>Leaderboard Table</div>;
 };
 

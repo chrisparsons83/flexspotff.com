@@ -4,7 +4,7 @@ import Header from './Header';
 
 type ComponentProps = PropsWithChildren<{ children: ReactNode }>;
 
-const Page = ({ children }: ComponentProps): JSX.Element => {
+const Page: React.FC = ({ children }: ComponentProps) => {
   return (
     <div>
       <Header />

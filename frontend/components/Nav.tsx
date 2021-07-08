@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Nav = (): JSX.Element => {
+const Nav: React.FC = () => {
   return (
     <nav>
       <Link href="/">Home</Link>

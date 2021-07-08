@@ -1,6 +1,6 @@
 import Leaderboard from '../../components/Leaderboard';
 
-const LeaderboardPage = (): JSX.Element => {
+const LeaderboardPage: React.FC = () => {
   return (
     <>
       <h1>Leaderboard</h1>

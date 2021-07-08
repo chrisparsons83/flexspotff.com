@@ -1,4 +1,4 @@
-const UserProfilePage = (): JSX.Element => {
+const UserProfilePage: React.FC = () => {
   return (
     <div>
       <h1>User Profile Page</h1>

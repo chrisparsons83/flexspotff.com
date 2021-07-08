@@ -1,6 +1,6 @@
 import Nav from './Nav';
 
-const Header = (): JSX.Element => {
+const Header: React.FC = () => {
   return (
     <div>
       FlexSpot Fantasy

@@ -1,6 +1,6 @@
 import useUser from '../lib/useUser';
 
-const LeaguesPage = (): JSX.Element => {
+const LeaguesPage: React.FC = () => {
   const data = useUser();
 
   if (data.isError) return data.isError;
