@@ -5,6 +5,10 @@ const StandingsPage: React.FC = () => {
     <>
       <h1>Standings</h1>
       <LeagueStandings leagueName="Champions League" />
+      <LeagueStandings leagueName="Admiral League" />
+      <LeagueStandings leagueName="Dragon League" />
+      <LeagueStandings leagueName="Galaxy League" />
+      <LeagueStandings leagueName="Monarch League" />
     </>
   );
 };

@@ -4,6 +4,9 @@ typographyOverrides = (theme) => ({
       h1: {
         color: theme('colors.custom-green.light'),
       },
+      h2: {
+        color: theme('colors.custom-green.light'),
+      },
     },
   },
 });

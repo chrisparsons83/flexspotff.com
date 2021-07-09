@@ -23,15 +23,85 @@ const LeagueStandings: React.FC<Props> = ({ leagueName }) => {
             <td>1</td>
             <td>Jason Garrett</td>
             <td>26-0</td>
-            <td>1000000.00</td>
-            <td>4.2</td>
+            <td>1700.00</td>
+            <td>1470.20</td>
           </tr>
           <tr className="bg-gray-800 text-gray-50">
             <td>2</td>
             <td>Jason Jarrett</td>
             <td>0-26</td>
-            <td>4.2</td>
-            <td>1000000.00</td>
+            <td>1470.20</td>
+            <td>1700.00</td>
+          </tr>
+          <tr className="bg-gray-700 text-gray-50">
+            <td>3</td>
+            <td>Jason Garrett</td>
+            <td>26-0</td>
+            <td>1700.00</td>
+            <td>1470.20</td>
+          </tr>
+          <tr className="bg-gray-800 text-gray-50">
+            <td>4</td>
+            <td>Jason Jarrett</td>
+            <td>0-26</td>
+            <td>1470.20</td>
+            <td>1700.00</td>
+          </tr>
+          <tr className="bg-gray-700 text-gray-50">
+            <td>5</td>
+            <td>Jason Garrett</td>
+            <td>26-0</td>
+            <td>1700.00</td>
+            <td>1470.20</td>
+          </tr>
+          <tr className="bg-gray-800 text-gray-50">
+            <td>6</td>
+            <td>Jason Jarrett</td>
+            <td>0-26</td>
+            <td>1470.20</td>
+            <td>1700.00</td>
+          </tr>
+          <tr className="bg-gray-700 text-gray-50">
+            <td>7</td>
+            <td>Jason Garrett</td>
+            <td>26-0</td>
+            <td>1700.00</td>
+            <td>1470.20</td>
+          </tr>
+          <tr className="bg-gray-800 text-gray-50">
+            <td>8</td>
+            <td>Jason Jarrett</td>
+            <td>0-26</td>
+            <td>1470.20</td>
+            <td>1700.00</td>
+          </tr>
+          <tr className="bg-gray-700 text-gray-50">
+            <td>9</td>
+            <td>Jason Garrett</td>
+            <td>26-0</td>
+            <td>1700.00</td>
+            <td>1470.20</td>
+          </tr>
+          <tr className="bg-gray-800 text-gray-50">
+            <td>10</td>
+            <td>Jason Jarrett</td>
+            <td>0-26</td>
+            <td>1470.20</td>
+            <td>1700.00</td>
+          </tr>
+          <tr className="bg-gray-700 text-gray-50">
+            <td>11</td>
+            <td>Jason Garrett</td>
+            <td>26-0</td>
+            <td>1700.00</td>
+            <td>1470.20</td>
+          </tr>
+          <tr className="bg-gray-800 text-gray-50">
+            <td>12</td>
+            <td>Jason Jarrett</td>
+            <td>0-26</td>
+            <td>1470.20</td>
+            <td>1700.00</td>
           </tr>
         </tbody>
       </table>
