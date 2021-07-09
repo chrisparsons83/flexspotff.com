@@ -11,11 +11,11 @@ const LeagueStandings: React.FC<Props> = ({ leagueName }) => {
       <table>
         <thead>
           <tr className="bg-gray-900 text-gray-400">
-            <th>Rank</th>
-            <th>Team</th>
-            <th>Record</th>
-            <th>PF</th>
-            <th>PA</th>
+            <th className="px-4">Rank</th>
+            <th className="px-4">Team</th>
+            <th className="px-4">Record</th>
+            <th className="px-4">PF</th>
+            <th className="px-4">PA</th>
           </tr>
         </thead>
         <tbody>
