@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Container } from '@chakra-ui/react';
 import Logo from './Logo';
 import MenuToggle from './MenuToggle';
 
@@ -8,10 +9,10 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <Container maxW="container.lg">
       <Logo />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-    </div>
+    </Container>
   );
 };
 
