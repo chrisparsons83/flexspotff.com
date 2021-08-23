@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, SimpleGrid, Spacer } from '@chakra-ui/react';
+import { Box, Center, Flex, Heading, SimpleGrid, Spacer } from '@chakra-ui/react';
 import { LeagueName } from '../../features/leaderboard';
 
 const LeaderboardsPage = () => {
@@ -8,9 +8,17 @@ const LeaderboardsPage = () => {
         Week 1 Leaderboard
       </Heading>
       <div>
-        <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
+        <SimpleGrid
+          columns={[1, null, 2]}
+          spacingX={10}
+          spacingY={3}
+          mb={2}
+          p={2}
+          bg="brand.300"
+          fontWeight="bold"
+        >
           <Flex>
-            <Box>Rank</Box>
+            <Box w={14}>Rank</Box>
             <Box>Manager</Box>
             <Spacer />
             <Box>League</Box>
@@ -24,7 +32,9 @@ const LeaderboardsPage = () => {
         </SimpleGrid>
         <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
           <Flex>
-            <Box>21.</Box>
+            <Center w={10} mr={4} bg="brand.400">
+              21
+            </Center>
             <Box>christhrowrocks</Box>
             <Spacer />
             <Box>
@@ -40,7 +50,9 @@ const LeaderboardsPage = () => {
         </SimpleGrid>
         <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
           <Flex>
-            <Box>22.</Box>
+            <Center w={10} mr={4} bg="brand.400">
+              22
+            </Center>
             <Box>Bootz</Box>
             <Spacer />
             <Box>
@@ -56,7 +68,9 @@ const LeaderboardsPage = () => {
         </SimpleGrid>
         <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
           <Flex>
-            <Box>23.</Box>
+            <Center w={10} mr={4} bg="brand.400">
+              23
+            </Center>
             <Box>Smelscifi</Box>
             <Spacer />
             <Box>
@@ -72,7 +86,9 @@ const LeaderboardsPage = () => {
         </SimpleGrid>
         <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
           <Flex>
-            <Box>24.</Box>
+            <Center w={10} mr={4} bg="brand.400">
+              24
+            </Center>
             <Box>Noro</Box>
             <Spacer />
             <Box>
@@ -88,7 +104,9 @@ const LeaderboardsPage = () => {
         </SimpleGrid>
         <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
           <Flex>
-            <Box>25.</Box>
+            <Center w={10} mr={4} bg="brand.400">
+              25
+            </Center>
             <Box>Brando</Box>
             <Spacer />
             <Box>
