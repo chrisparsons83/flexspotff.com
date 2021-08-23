@@ -4,7 +4,9 @@ import { LeagueName } from '../../features/leaderboard';
 const LeaderboardsPage = () => {
   return (
     <div>
-      <Heading as="h1">Week 1 Leaderboard</Heading>
+      <Heading as="h1" mb={4}>
+        Week 1 Leaderboard
+      </Heading>
       <div>
         <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
           <Flex>
