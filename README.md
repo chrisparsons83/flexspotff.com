@@ -120,6 +120,10 @@ This is an example of how to list things you need to use the software and how to
    cd backend
    npx mikro-orm migration:up
    ```
+6. To run the front end website:
+   ```sh
+   cd frontend && npm run dev
+   ```
 
 <!-- USAGE EXAMPLES -->
 
