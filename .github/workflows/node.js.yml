@@ -40,10 +40,10 @@ jobs:
         # Private Key
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         # Remote host
-        REMOTE_HOST: ${{ secrets.SERVER }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         # Remote user
-        REMOTE_USER: ${{ secrets.USERNAME }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
         # Source directory
         SOURCE: 'frontend'
         # Target directory
-        TARGET: ${{ secrets.PRODUCTION_DIR }}
+        TARGET: ${{ secrets.TARGET }}/frontend
