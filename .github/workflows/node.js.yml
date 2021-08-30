@@ -46,4 +46,4 @@ jobs:
         # Source directory
         SOURCE: 'frontend'
         # Target directory
-        TARGET: ${{ secrets.TARGET }}/frontend
+        TARGET: ${{ secrets.TARGET_FRONTEND }}
