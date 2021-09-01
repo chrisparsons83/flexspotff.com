@@ -17,9 +17,10 @@ const AdpTable = () => {
   ];
   const draftResults = usePicks(draftsToLookup)
     .map((draft) => draft.data?.results)
-    .flat();
+    .flat()
+    .filter((x) => !!x);
 
-  const numberOfDrafts = Math.ceil((draftResults.length - 5) / 180);
+  const numberOfDrafts = Math.ceil(draftResults.length / 180);
   const draftFreq: Map<string, number[]> = new Map();
 
   for (const pick of draftResults) {
