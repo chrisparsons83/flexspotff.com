@@ -5,6 +5,14 @@ interface Props {
   data: DraftPickRow;
 }
 
+const rankColors = {
+  DEF: 'rgba(134, 73, 53, 0.8)',
+  QB: 'rgba(129, 15, 57, 0.8)',
+  RB: 'rgba(13, 113, 83, 0.8)',
+  TE: 'rgba(151, 79, 1, 0.8)',
+  WR: 'rgba(6, 109, 150, 0.8)',
+};
+
 const AdpTableRow: React.FC<Props> = ({ data }) => {
   const { rank, name, position, adp, min, max, percentDrafted } = data;
 
@@ -49,7 +57,7 @@ const AdpTableRow: React.FC<Props> = ({ data }) => {
   return (
     <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
       <Flex>
-        <Center w={10} mr={4} bg="brand.400">
+        <Center w={10} mr={4} bg={rankColors[position]}>
           {rank}
         </Center>
         <Box>{name}</Box>
