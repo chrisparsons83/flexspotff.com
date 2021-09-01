@@ -1,7 +1,15 @@
-import { useQuery } from 'react-query';
+import { useQueries, UseQueryResult } from 'react-query';
 
 import { getPicks } from '../api';
+import { GetPicksResults } from '../types';
 
-export const usePicks = (draft: number) => {
-  return useQuery(['drafts', draft], () => getPicks(draft));
+export const usePicks = (drafts: string[]): UseQueryResult<GetPicksResults>[] => {
+  return useQueries(
+    drafts.map((draft) => {
+      return {
+        queryKey: ['draft', draft],
+        queryFn: () => getPicks(draft),
+      };
+    }),
+  );
 };
