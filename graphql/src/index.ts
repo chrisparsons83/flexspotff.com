@@ -25,7 +25,7 @@ const app = fastify({
   logger: true,
 });
 
-(async function serverStart() {
+(async () => {
   await server.start();
   app.register(server.createHandler());
   await app.listen(3000);
