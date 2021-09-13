@@ -1,31 +1,28 @@
-import { ApolloServer, gql } from 'apollo-server-fastify';
+import 'reflect-metadata';
+import { ApolloServer } from 'apollo-server-fastify';
 import fastify from 'fastify';
+import fastifyCors from 'fastify-cors';
+import { buildSchema } from 'type-graphql';
 
-// The GraphQL schema
-const typeDefs = gql`
-  type Query {
-    "A simple type for getting started!"
-    hello: String
-  }
-`;
-
-// A map of functions which return data for the schema.
-const resolvers = {
-  Query: {
-    hello: () => 'world',
-  },
-};
-
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
-
-const app = fastify({
-  logger: true,
-});
+import HelloWorldResolver from './resolvers/HelloWorldResolver';
 
 (async () => {
+  const server = new ApolloServer({
+    schema: await buildSchema({
+      resolvers: [HelloWorldResolver],
+    }),
+    context: ({ req, res }) => ({ req, res }),
+  });
+
+  const app = fastify({
+    logger: true,
+  });
+
+  // Setup CORS.
+  app.register(fastifyCors, {
+    origin: '*',
+  });
+
   await server.start();
   app.register(server.createHandler());
   await app.listen(3000);
