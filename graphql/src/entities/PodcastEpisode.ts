@@ -9,9 +9,17 @@ export default class PodcastEpisode extends BaseEntity {
   @Property()
   description!: string;
 
-  constructor(title: string, description: string) {
+  @Property()
+  season!: number;
+
+  @Property()
+  episode!: number;
+
+  constructor(title: string, description: string, season: number, episode: number) {
     super();
     this.title = title;
     this.description = description;
+    this.season = season;
+    this.episode = episode;
   }
 }
