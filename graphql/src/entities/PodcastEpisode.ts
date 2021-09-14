@@ -8,4 +8,10 @@ export default class PodcastEpisode extends BaseEntity {
 
   @Property()
   description!: string;
+
+  constructor(title: string, description: string) {
+    super();
+    this.title = title;
+    this.description = description;
+  }
 }
