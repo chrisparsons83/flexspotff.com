@@ -15,11 +15,21 @@ export default class PodcastEpisode extends BaseEntity {
   @Property()
   episode!: number;
 
-  constructor(title: string, description: string, season: number, episode: number) {
+  @Property()
+  filepath!: string;
+
+  constructor(
+    title: string,
+    description: string,
+    season: number,
+    episode: number,
+    filepath: string,
+  ) {
     super();
     this.title = title;
     this.description = description;
     this.season = season;
     this.episode = episode;
+    this.filepath = filepath;
   }
 }
