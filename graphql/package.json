@@ -10,9 +10,13 @@
   "author": "Chris Parsons <chris@chris-parsons.com>",
   "license": "ISC",
   "dependencies": {
+    "@mikro-orm/core": "^4.5.9",
+    "@mikro-orm/postgresql": "^4.5.9",
     "apollo-server-fastify": "^3.3.0",
+    "dotenv": "^8.2.0",
     "fastify": "^3.21.0",
     "fastify-cors": "^6.0.2",
+    "fastify-plugin": "^2.3.4",
     "graphql": "^15.5.3",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1"

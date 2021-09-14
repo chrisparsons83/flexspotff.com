@@ -1,10 +1,15 @@
 import 'reflect-metadata';
+import dotenv from 'dotenv';
 import { ApolloServer } from 'apollo-server-fastify';
 import fastify from 'fastify';
 import fastifyCors from 'fastify-cors';
 import { buildSchema } from 'type-graphql';
 
 import HelloWorldResolver from './resolvers/HelloWorldResolver';
+import mikroorm from './mikro-orm';
+
+// Load env file first.
+dotenv.config();
 
 (async () => {
   const server = new ApolloServer({
@@ -22,6 +27,9 @@ import HelloWorldResolver from './resolvers/HelloWorldResolver';
   app.register(fastifyCors, {
     origin: '*',
   });
+
+  // Setup MikroORM
+  app.register(mikroorm);
 
   await server.start();
   app.register(server.createHandler());
