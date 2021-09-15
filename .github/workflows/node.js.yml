@@ -26,13 +26,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Run NPM CI
+    - name: Run NPM CI Frontend
       run: npm ci
       working-directory: frontend
     - name: Build Frontend
       run: npm run build
       working-directory: frontend
-    - name: ssh deploy
+    - name: Run NPM CI GraphQL
+      run: npm ci
+      working-directory: graphql
+    - name: Build GraphQL
+      run: npm run build
+      working-directory: graphql
+    - name: SSH Deploy Frontend
       # You may pin to the exact commit or the version.
       # uses: easingthemes/ssh-deploy@c711f2c3391cac2876bf4c833590077f02e4bcb8
       uses: easingthemes/ssh-deploy@v2.2.11
@@ -47,3 +53,18 @@ jobs:
         SOURCE: 'frontend'
         # Target directory
         TARGET: ${{ secrets.TARGET }}
+    - name: SSH Deploy GraphQL
+      # You may pin to the exact commit or the version.
+      # uses: easingthemes/ssh-deploy@c711f2c3391cac2876bf4c833590077f02e4bcb8
+      uses: easingthemes/ssh-deploy@v2.2.11
+      with:
+        # Private Key
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        # Remote host
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        # Remote user
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        # Source directory
+        SOURCE: 'graphql'
+        # Target directory
+        TARGET: ${{ secrets.TARGET_GRAPHQL }}
