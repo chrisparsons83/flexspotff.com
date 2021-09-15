@@ -7,6 +7,7 @@ import { buildSchema } from 'type-graphql';
 
 import HelloWorldResolver from './resolvers/HelloWorldResolver';
 import mikroorm from './mikro-orm';
+import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
 
 // Load env file first.
 dotenv.config();
@@ -14,7 +15,7 @@ dotenv.config();
 (async () => {
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloWorldResolver],
+      resolvers: [HelloWorldResolver, PodcastEpisodeResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
   });

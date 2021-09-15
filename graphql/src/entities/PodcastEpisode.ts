@@ -19,7 +19,7 @@ export default class PodcastEpisode extends BaseEntity {
   filepath!: string;
 
   @Property({ type: DateType })
-  publishDate?: Date;
+  publishDate!: Date;
 
   constructor(
     title: string,

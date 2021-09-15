@@ -8,6 +8,7 @@ dotenv.config();
 
 const config: Options = {
   dbName: process.env.DB_NAME,
+  debug: true,
   entities: [BaseEntity, PodcastEpisode],
   host: process.env.DB_HOST,
   migrations: {
