@@ -65,6 +65,6 @@ jobs:
         # Remote user
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         # Source directory
-        SOURCE: 'graphql/dist/'
+        SOURCE: 'graphql/'
         # Target directory
         TARGET: ${{ secrets.TARGET_GRAPHQL }}
