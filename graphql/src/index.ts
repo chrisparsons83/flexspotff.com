@@ -34,5 +34,5 @@ dotenv.config();
 
   await server.start();
   app.register(server.createHandler());
-  await app.listen(3000);
+  await app.listen(process.env.GRAPHQL_PORT || 3000);
 })();
