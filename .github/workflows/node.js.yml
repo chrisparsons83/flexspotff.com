@@ -68,3 +68,18 @@ jobs:
         SOURCE: 'graphql/'
         # Target directory
         TARGET: ${{ secrets.TARGET_GRAPHQL }}
+    - name: SSH Remote Commands
+      # You may pin to the exact commit or the version.
+      # uses: appleboy/ssh-action@1d1b21ca96111b1eb4c03c21c14ebb971d2200f6
+      uses: appleboy/ssh-action@v0.1.4
+      with:
+        # ssh host
+        host: ${{ secrets.REMOTE_HOST }}
+        # ssh username
+        username: ${{ secrets.REMOTE_USER }}
+        # content of ssh private key. ex raw content of ~/.ssh/id_rsa
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        # execute commands
+        script: |
+          cd /var/www/flexspotff.com/graphql
+          npx mikro-orm migration:up
