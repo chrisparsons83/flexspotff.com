@@ -10,9 +10,7 @@ const feedOptions = {
   feedUrl: 'https://www.flexspotff.com/rss/trash-turtle-football.xml',
   imageUrl: 'http://flexspotff-podcast.ewr1.vultrobjects.com/ttf.jpg',
   itunesAuthor: 'DrTrashdad and Bootzfantasy',
-  itunesCategories: [
-    { text: 'Sports', subcats: [{ text: 'Fantasy Sports' }, { text: 'Football' }] },
-  ],
+  itunesCategory: [{ text: 'Sports', subcats: [{ text: 'Fantasy Sports' }, { text: 'Football' }] }],
   itunesExplicit: false,
   itunesOwner: {
     name: 'DrTrashdad and Bootzfantasy',
