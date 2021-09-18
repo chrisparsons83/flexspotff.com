@@ -3,6 +3,7 @@ import { mkdirSync, writeFileSync } from 'fs';
 
 const feedOptions = {
   author: 'DrTrashdad and Bootzfantasy',
+  copyright: 'Copyright 2021, DrTrashdad and Bootzfantasy',
   description:
     'Unleashed from the iconic Flexspot Fantasy Football Discord server, Dr. Trashdad and Bootz bring the next generation of a fantasy football podcast. A conversation between a numbers and spreadsheets analyst and a film room or gut drafter, Bootz and Trashdad talk about fantasy relevant topics to help you get the edge you need in your league. Redraft, dynasty, bestball, and even some sportsbetting are common topics. Listen to us to get in-depth and less talked-about fantasy knowledge without the fluff.',
   feedUrl: 'https://www.flexspotff.com/rss/trash-turtle-football.xml',
@@ -32,7 +33,14 @@ export const generatePodcastFeed = async () => {
 
   // Start adding episodes here
   for (const episode of feedEpisodes) {
-    podcast.addItem(episode);
+    const episodeFormat = {
+      ...episode,
+      enclosure: {
+        url: episode.filepath,
+      },
+      url: `https://www.flexspotff.com/podcast/${episode.season}/${episode.episode}`,
+    };
+    podcast.addItem(episodeFormat);
   }
 
   mkdirSync('./public/rss', { recursive: true });
