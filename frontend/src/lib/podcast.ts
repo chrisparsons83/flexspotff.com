@@ -35,6 +35,7 @@ export const generatePodcastFeed = async () => {
   for (const episode of feedEpisodes) {
     const episodeFormat = {
       ...episode,
+      date: episode.publishDate,
       enclosure: {
         url: episode.filepath,
       },
