@@ -27,6 +27,8 @@ const feedEpisodes = [
     duration: 2678,
     episode: 1,
     filepath: 'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E01_-_The_Return.mp3',
+    filesize: 41400335,
+    filetype: 'audio/mpeg',
     publishDate: '2021-08-31',
     season: 2,
     title: `The Return`,
@@ -43,7 +45,8 @@ export const generatePodcastFeed = async () => {
       date: episode.publishDate,
       enclosure: {
         url: episode.filepath,
-        file: episode.filepath,
+        size: episode.filesize,
+        type: episode.filetype,
       },
       itunesAuthor: feedOptions.author,
       itunesDuration: episode.duration,
