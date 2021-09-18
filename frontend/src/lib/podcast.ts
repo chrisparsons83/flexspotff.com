@@ -32,6 +32,7 @@ const feedEpisodes = [
     filetype: 'audio/mpeg',
     publishDate: '2021-08-31',
     season: 2,
+    shownotes: '',
     title: `The Return`,
   },
 ];
@@ -43,6 +44,7 @@ export const generatePodcastFeed = async () => {
   for (const episode of feedEpisodes) {
     const episodeFormat = {
       ...episode,
+      customElements: [{ 'content:encoded': episode.shownotes }],
       date: episode.publishDate,
       enclosure: {
         url: episode.filepath,
