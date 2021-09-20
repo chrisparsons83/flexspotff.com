@@ -6,7 +6,6 @@ import fastifyCors from 'fastify-cors';
 import { buildSchema } from 'type-graphql';
 
 import HelloWorldResolver from './resolvers/HelloWorldResolver';
-import mikroorm from './mikro-orm';
 import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
 import LeagueResolver from './resolvers/LeagueResolver';
 
@@ -29,9 +28,6 @@ dotenv.config();
   app.register(fastifyCors, {
     origin: '*',
   });
-
-  // Setup MikroORM
-  app.register(mikroorm);
 
   await server.start();
   app.register(server.createHandler());
