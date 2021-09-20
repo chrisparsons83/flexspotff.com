@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import { Options } from '@mikro-orm/core';
 
 import BaseEntity from './entities/BaseEntity';
+import League from './entities/League';
 import PodcastEpisode from './entities/PodcastEpisode';
 
 dotenv.config();
@@ -9,7 +10,7 @@ dotenv.config();
 const config: Options = {
   dbName: process.env.DB_NAME,
   debug: true,
-  entities: [BaseEntity, PodcastEpisode],
+  entities: [BaseEntity, League, PodcastEpisode],
   host: process.env.DB_HOST,
   migrations: {
     path: 'src/migrations/',

@@ -16,6 +16,7 @@
     "@mikro-orm/migrations": "^4.5.9",
     "@mikro-orm/postgresql": "^4.5.9",
     "apollo-server-fastify": "^3.3.0",
+    "axios": "^0.21.4",
     "dotenv": "^8.2.0",
     "fastify": "^3.21.0",
     "fastify-cors": "^6.0.2",
