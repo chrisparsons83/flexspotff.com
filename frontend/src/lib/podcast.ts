@@ -8,7 +8,7 @@ const feedOptions = {
   description:
     'Unleashed from the iconic Flexspot Fantasy Football Discord server, Dr. Trashdad and Bootz bring the next generation of a fantasy football podcast. A conversation between a numbers and spreadsheets analyst and a film room or gut drafter, Bootz and Trashdad talk about fantasy relevant topics to help you get the edge you need in your league. Redraft, dynasty, bestball, and even some sportsbetting are common topics. Listen to us to get in-depth and less talked-about fantasy knowledge without the fluff.',
   feedUrl: 'https://www.flexspotff.com/rss/trash-turtle-football.xml',
-  imageUrl: 'http://flexspotff-podcast.ewr1.vultrobjects.com/ttf.jpg',
+  imageUrl: 'http://flexspotff-podcast.ewr1.vultrobjects.com/ttflogosq.jpg',
   itunesAuthor: 'DrTrashdad and Bootzfantasy',
   itunesCategory: [
     {
