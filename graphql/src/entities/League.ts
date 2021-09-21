@@ -1,5 +1,5 @@
 import { Entity, Property, Unique } from '@mikro-orm/core';
-import { Field, ObjectType } from 'type-graphql';
+import { Field, Int, ObjectType } from 'type-graphql';
 import BaseEntity from './BaseEntity';
 
 @Entity()
@@ -13,7 +13,7 @@ export default class League extends BaseEntity {
   @Property()
   year: string;
 
-  @Field()
+  @Field(() => Int)
   @Property({ default: 2 })
   tier: number;
 
