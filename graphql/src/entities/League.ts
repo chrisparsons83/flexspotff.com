@@ -14,6 +14,10 @@ export default class League extends BaseEntity {
   year: string;
 
   @Field()
+  @Property({ default: 2 })
+  tier: number;
+
+  @Field()
   @Property()
   @Unique()
   sleeperLeagueId: string;
@@ -23,10 +27,17 @@ export default class League extends BaseEntity {
   @Unique()
   sleeperDraftId: string;
 
-  constructor(name: string, year: string, sleeperLeagueId: string, sleeperDraftId: string) {
+  constructor(
+    name: string,
+    year: string,
+    sleeperLeagueId: string,
+    sleeperDraftId: string,
+    tier: number,
+  ) {
     super();
     this.name = name;
     this.year = year;
+    this.tier = tier;
     this.sleeperLeagueId = sleeperLeagueId;
     this.sleeperDraftId = sleeperDraftId;
   }
