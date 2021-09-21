@@ -25,6 +25,16 @@ export default class LeagueResolver {
     return newLeague;
   }
 
+  @Mutation(() => Boolean)
+  async deleteLeague(
+    @Arg('sleeperLeagueId') sleeperLeagueId: string,
+    @Ctx() ctx: GraphQLContext,
+  ): Promise<boolean> {
+    const league = await ctx.em.findOneOrFail(League, { sleeperLeagueId });
+    await ctx.em.removeAndFlush(league);
+    return true;
+  }
+
   @Query(() => [League])
   async leagues(@Ctx() ctx: GraphQLContext): Promise<League[]> {
     const leagues = await ctx.em.find(League, {});
