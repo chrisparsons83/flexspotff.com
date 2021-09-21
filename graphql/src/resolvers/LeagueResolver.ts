@@ -1,8 +1,8 @@
-import { Arg, Ctx, Mutation, Query, Resolver } from 'type-graphql';
 import { wrap } from '@mikro-orm/core';
+import { Arg, Ctx, Mutation, Query, Resolver } from 'type-graphql';
+import League from '../entities/League';
 import Axios from '../lib/axios';
 import { GraphQLContext, SleeperLeague } from '../types';
-import League from '../entities/League';
 
 @Resolver()
 export default class LeagueResolver {
