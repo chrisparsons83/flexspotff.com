@@ -1,15 +1,15 @@
-import 'reflect-metadata';
-import dotenv from 'dotenv';
+import { MikroORM } from '@mikro-orm/core';
 import { ApolloServer } from 'apollo-server-fastify';
+import dotenv from 'dotenv';
 import fastify from 'fastify';
 import fastifyCors from 'fastify-cors';
-import { MikroORM } from '@mikro-orm/core';
+import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
-
-import HelloWorldResolver from './resolvers/HelloWorldResolver';
-import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
-import LeagueResolver from './resolvers/LeagueResolver';
+import customAuthChecker from './lib/auth-checker';
 import config from './mikro-orm.config';
+import HelloWorldResolver from './resolvers/HelloWorldResolver';
+import LeagueResolver from './resolvers/LeagueResolver';
+import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
 
 // Load env file first.
 dotenv.config();
@@ -22,6 +22,7 @@ dotenv.config();
   const server = new ApolloServer({
     schema: await buildSchema({
       resolvers: [HelloWorldResolver, LeagueResolver, PodcastEpisodeResolver],
+      authChecker: customAuthChecker,
     }),
     context: ({ req, res }) => ({ req, res, em: mikroorm.em.fork() }),
   });

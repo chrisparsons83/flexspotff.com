@@ -1,11 +1,12 @@
 import { wrap } from '@mikro-orm/core';
-import { Arg, Ctx, Mutation, Query, Resolver } from 'type-graphql';
+import { Arg, Authorized, Ctx, Mutation, Query, Resolver } from 'type-graphql';
 import League from '../entities/League';
 import Axios from '../lib/axios';
 import { GraphQLContext, SleeperLeague } from '../types';
 
 @Resolver()
 export default class LeagueResolver {
+  @Authorized('ADMIN')
   @Mutation(() => League)
   async createLeague(
     @Arg('sleeperLeagueId') sleeperLeagueId: string,
@@ -25,6 +26,7 @@ export default class LeagueResolver {
     return newLeague;
   }
 
+  @Authorized('ADMIN')
   @Mutation(() => Boolean)
   async deleteLeague(
     @Arg('sleeperLeagueId') sleeperLeagueId: string,
@@ -41,6 +43,7 @@ export default class LeagueResolver {
     return leagues;
   }
 
+  @Authorized('ADMIN')
   @Mutation(() => League)
   async updateLeague(
     @Arg('sleeperLeagueId') sleeperLeagueId: string,

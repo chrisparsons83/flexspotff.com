@@ -13,3 +13,5 @@ export default class Migration20210920063627 extends Migration {
     );
   }
 }
+
+export { Migration20210920063627 };

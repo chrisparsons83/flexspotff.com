@@ -2,6 +2,13 @@
 import { Connection, EntityManager, IDatabaseDriver } from '@mikro-orm/core';
 import { FastifyRequest, FastifyReply } from 'fastify';
 
+export interface GraphQLContext {
+  req: FastifyRequest;
+  res: FastifyReply;
+  em: EntityManager<IDatabaseDriver<Connection>>;
+  userId?: number;
+}
+
 export type SleeperLeague = {
   total_rosters: number;
   status: string;
@@ -17,9 +24,3 @@ export type SleeperLeague = {
   draft_id: string;
   avatar: string;
 };
-
-export interface GraphQLContext {
-  req: FastifyRequest;
-  res: FastifyReply;
-  em: EntityManager<IDatabaseDriver<Connection>>;
-}
