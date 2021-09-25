@@ -39,8 +39,9 @@ dotenv.config();
     }),
     context: ({ req, res }) => ({ req, res, em: mikroorm.em.fork() }),
   });
-
   await server.start();
   app.register(server.createHandler());
+
+  // Spin up Fastify.
   await app.listen(process.env.GRAPHQL_PORT || 3000);
 })();
