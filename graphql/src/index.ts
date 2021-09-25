@@ -10,7 +10,6 @@ import { buildSchema } from 'type-graphql';
 import customAuthChecker from './lib/auth-checker';
 import config from './mikro-orm.config';
 import discordOAuthConfig from './oauth2-discord.config';
-import HelloWorldResolver from './resolvers/HelloWorldResolver';
 import LeagueResolver from './resolvers/LeagueResolver';
 import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
 import authRoutes from './routes/auth';
@@ -35,7 +34,7 @@ dotenv.config();
   // Setup ApolloServer
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloWorldResolver, LeagueResolver, PodcastEpisodeResolver],
+      resolvers: [LeagueResolver, PodcastEpisodeResolver],
       authChecker: customAuthChecker,
     }),
     context: ({ req, res }) => ({ req, res, em: mikroorm.em.fork() }),
