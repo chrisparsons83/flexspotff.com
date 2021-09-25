@@ -27,7 +27,7 @@ dotenv.config();
   // Setup CORS.
   app.register(fastifyCors, { origin: '*' });
 
-  // Setup oauth2 for Discord.
+  // Setup OAuth2 for Discord.
   app.register(oauthPlugin, discordOAuthConfig);
   app.register(authRoutes);
 
