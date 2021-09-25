@@ -20,6 +20,7 @@
     "dotenv": "^8.2.0",
     "fastify": "^3.21.0",
     "fastify-cors": "^6.0.2",
+    "fastify-oauth2": "^4.2.3",
     "fastify-plugin": "^2.3.4",
     "graphql": "^15.5.3",
     "reflect-metadata": "^0.1.13",
