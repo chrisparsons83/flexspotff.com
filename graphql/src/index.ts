@@ -13,6 +13,7 @@ import discordOAuthConfig from './oauth2-discord.config';
 import HelloWorldResolver from './resolvers/HelloWorldResolver';
 import LeagueResolver from './resolvers/LeagueResolver';
 import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
+import authRoutes from './routes/auth';
 
 // Load env file first.
 dotenv.config();
@@ -29,6 +30,7 @@ dotenv.config();
 
   // Setup oauth2
   app.register(oauthPlugin, discordOAuthConfig);
+  app.register(authRoutes);
 
   // Setup ApolloServer
   const server = new ApolloServer({
