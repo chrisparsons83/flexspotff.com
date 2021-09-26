@@ -2,6 +2,21 @@
 import { Connection, EntityManager, IDatabaseDriver } from '@mikro-orm/core';
 import { FastifyRequest, FastifyReply } from 'fastify';
 
+export type DiscordUser = {
+  id: string;
+  username: string;
+  avatar?: string;
+  discriminator: string;
+  public_flags?: number;
+  flags?: number;
+  banner?: string;
+  banner_color?: number;
+  accent_color?: number;
+  locale?: string;
+  mfa_enabled?: boolean;
+  premium_type?: number;
+};
+
 export interface GraphQLContext {
   req: FastifyRequest;
   res: FastifyReply;

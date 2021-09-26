@@ -10,7 +10,13 @@ export const getStaticProps: GetStaticProps = async (_context) => {
 };
 
 const Home: React.FC = () => {
-  return <div>Homepage still TBD.</div>;
+  return (
+    <div>
+      <p>
+        Homepage still TBD. <a href="/login">Test Login</a>
+      </p>
+    </div>
+  );
 };
 
 export default Home;

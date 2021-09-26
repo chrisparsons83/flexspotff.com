@@ -18,11 +18,12 @@ import authRoutes from './routes/auth';
 dotenv.config();
 
 (async () => {
-  // Setup MikroORM.
-  const mikroorm = await MikroORM.init(config);
-
   // Setup fastify.
-  const app = fastify({ logger: true });
+  const app = fastify({ logger: process.env.NODE_ENV !== 'production' });
+
+  // Setup MikroORM.
+  // TODO: Make this fastify module.
+  const mikroorm = await MikroORM.init(config);
 
   // Setup CORS.
   app.register(fastifyCors, { origin: '*' });

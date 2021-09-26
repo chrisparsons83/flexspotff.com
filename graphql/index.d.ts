@@ -1,3 +1,5 @@
+import { OAuth2Namespace } from 'fastify-oauth2';
+
 /* eslint-disable no-unused-vars */
 declare global {
   namespace NodeJS {
@@ -16,6 +18,12 @@ declare global {
       FRONTEND_URL: string;
       JWT_KEY: string;
     }
+  }
+}
+
+declare module 'fastify' {
+  interface FastifyInstance {
+    discordOAuth2: OAuth2Namespace;
   }
 }
 
