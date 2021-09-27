@@ -1,5 +1,6 @@
 import { FastifyError, FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import fastifyPlugin from 'fastify-plugin';
+import User from '../entities/User';
 
 import Axios from '../lib/axios';
 import { DiscordUser } from '../types';
@@ -19,12 +20,24 @@ const routes = async (fastify: FastifyInstance) => {
       headers: { Authorization: `${token.token_type} ${token.access_token}` },
       baseURL: 'https://discord.com',
     });
-    const discordUser = response.data;
+    const { id, username, avatar } = response.data;
 
     // Check to see if user exists
-    console.log(discordUser);
+    let localUser = await fastify.mikroorm.em.findOne(User, { discordId: id });
 
     // If they don't exist, create them in the system
+    if (!localUser) {
+      localUser = new User(id, username);
+    }
+
+    // Update their info with what you just received.
+    localUser.username = username;
+    localUser.avatar = avatar;
+
+    // Save to DB.
+    await fastify.mikroorm.em.persistAndFlush(localUser);
+    console.log(localUser);
+
     // Log user in
     // Create JWT
     // Redirect to homepage

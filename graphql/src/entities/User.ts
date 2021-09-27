@@ -14,14 +14,13 @@ export default class User extends BaseEntity {
   @Property()
   username: string;
 
-  @Field()
-  @Property()
-  avatar: string;
+  @Field({ nullable: true })
+  @Property({ nullable: true })
+  avatar?: string;
 
-  constructor(discordId: string, username: string, avatar: string) {
+  constructor(discordId: string, username: string) {
     super();
     this.discordId = discordId;
     this.username = username;
-    this.avatar = avatar;
   }
 }
