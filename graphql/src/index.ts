@@ -1,4 +1,3 @@
-import { MikroORM } from '@mikro-orm/core';
 import { ApolloServer } from 'apollo-server-fastify';
 import dotenv from 'dotenv';
 import fastify from 'fastify';
@@ -8,6 +7,7 @@ import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
 
 import customAuthChecker from './lib/auth-checker';
+import fastifyMikroorm from './lib/fastify-mikroorm';
 import config from './mikro-orm.config';
 import discordOAuthConfig from './oauth2-discord.config';
 import LeagueResolver from './resolvers/LeagueResolver';
@@ -22,8 +22,7 @@ dotenv.config();
   const app = fastify({ logger: process.env.NODE_ENV !== 'production' });
 
   // Setup MikroORM.
-  // TODO: Make this fastify module.
-  const mikroorm = await MikroORM.init(config);
+  app.register(fastifyMikroorm, config);
 
   // Setup CORS.
   app.register(fastifyCors, { origin: '*' });
@@ -38,7 +37,7 @@ dotenv.config();
       resolvers: [LeagueResolver, PodcastEpisodeResolver],
       authChecker: customAuthChecker,
     }),
-    context: ({ req, res }) => ({ req, res, em: mikroorm.em.fork() }),
+    context: ({ req, res }) => ({ req, res, em: app.mikroorm.em.fork() }),
   });
   await server.start();
   app.register(server.createHandler());
