@@ -18,6 +18,10 @@ export default class User extends BaseEntity {
   @Property({ nullable: true })
   avatar?: string;
 
+  @Field({ nullable: true })
+  @Property({ nullable: true })
+  role?: string;
+
   constructor(discordId: string, username: string) {
     super();
     this.discordId = discordId;

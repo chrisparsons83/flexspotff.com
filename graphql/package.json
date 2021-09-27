@@ -19,14 +19,17 @@
     "axios": "^0.21.4",
     "dotenv": "^8.2.0",
     "fastify": "^3.21.0",
+    "fastify-cookie": "^5.3.1",
     "fastify-cors": "^6.0.2",
     "fastify-oauth2": "^4.2.3",
     "fastify-plugin": "^2.3.4",
     "graphql": "^15.5.3",
+    "jsonwebtoken": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.5",
     "@types/node": "^10.17.60",
     "nodemon": "^2.0.12",
     "ts-node": "^10.2.1",

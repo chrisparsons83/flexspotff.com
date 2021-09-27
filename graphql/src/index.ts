@@ -1,6 +1,7 @@
 import { ApolloServer } from 'apollo-server-fastify';
 import dotenv from 'dotenv';
 import fastify from 'fastify';
+import cookie, { FastifyCookieOptions } from 'fastify-cookie';
 import fastifyCors from 'fastify-cors';
 import oauthPlugin from 'fastify-oauth2';
 import 'reflect-metadata';
@@ -26,6 +27,12 @@ dotenv.config();
 
   // Setup CORS.
   app.register(fastifyCors, { origin: '*' });
+
+  // Setup Fastify Cookie
+  app.register(cookie, {
+    secret: process.env.FASTIFY_COOKIE_KEY, // for cookies signature
+    parseOptions: {}, // options for parsing cookies
+  } as FastifyCookieOptions);
 
   // Setup OAuth2 for Discord.
   app.register(oauthPlugin, discordOAuthConfig);

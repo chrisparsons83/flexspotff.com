@@ -1,7 +1,8 @@
 import { FastifyError, FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import fastifyPlugin from 'fastify-plugin';
-import User from '../entities/User';
+import { sign } from 'jsonwebtoken';
 
+import User from '../entities/User';
 import Axios from '../lib/axios';
 import { DiscordUser } from '../types';
 
@@ -36,12 +37,18 @@ const routes = async (fastify: FastifyInstance) => {
 
     // Save to DB.
     await fastify.mikroorm.em.persistAndFlush(localUser);
-    console.log(localUser);
 
-    // Log user in
-    // Create JWT
+    // Log user in by creating JWT
+    // eslint-disable-next-line no-underscore-dangle
+    const userToken = sign({ userId: localUser._id }, process.env.JWT_KEY, { expiresIn: '7d' });
+
     // Redirect to homepage
-    reply.send({ message: 'hello!' });
+    reply
+      .cookie('token', userToken, {
+        domain: process.env.COOKIE_DOMAIN,
+        path: '/',
+      })
+      .redirect(`${process.env.FRONTEND_URL}`);
   });
 };
 
