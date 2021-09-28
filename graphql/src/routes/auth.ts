@@ -21,7 +21,7 @@ const routes = async (fastify: FastifyInstance) => {
       const { error } = request.query as DiscordCallbackQueryString;
       if (error === 'access_denied') {
         reply.redirect(process.env.FRONTEND_URL);
-        return;
+        return reply;
       }
 
       // Get tokens
