@@ -64,6 +64,7 @@ const routes = async (fastify: FastifyInstance) => {
           domain: process.env.COOKIE_DOMAIN,
           path: '/',
           httpOnly: true,
+          secure: true,
           expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
         })
         .redirect(process.env.FRONTEND_URL);
