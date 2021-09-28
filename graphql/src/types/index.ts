@@ -18,10 +18,9 @@ export type DiscordUser = {
 };
 
 export interface GraphQLContext {
-  req: FastifyRequest;
-  res: FastifyReply;
+  request: FastifyRequest;
+  reply: FastifyReply;
   em: EntityManager<IDatabaseDriver<Connection>>;
-  userId?: number;
 }
 
 export type SleeperLeague = {
@@ -38,4 +37,10 @@ export type SleeperLeague = {
   league_id: string;
   draft_id: string;
   avatar: string;
+};
+
+export type FlexSpotToken = {
+  userId: number;
+  iat: number;
+  exp: number;
 };

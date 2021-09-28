@@ -9,6 +9,7 @@ import { buildSchema } from 'type-graphql';
 
 import customAuthChecker from './lib/auth-checker';
 import fastifyMikroorm from './lib/fastify-mikroorm';
+import hookAddUser from './lib/hook-adduser';
 import config from './mikro-orm.config';
 import discordOAuthConfig from './oauth2-discord.config';
 import LeagueResolver from './resolvers/LeagueResolver';
@@ -26,13 +27,19 @@ dotenv.config();
   app.register(fastifyMikroorm, config);
 
   // Setup CORS.
-  app.register(fastifyCors, { origin: '*' });
+  app.register(fastifyCors, {
+    origin: '*',
+    credentials: true,
+  });
 
   // Setup Fastify Cookie
   app.register(cookie, {
     secret: process.env.FASTIFY_COOKIE_KEY, // for cookies signature
     parseOptions: {}, // options for parsing cookies
   } as FastifyCookieOptions);
+
+  // Parse cookie to add user.
+  app.register(hookAddUser);
 
   // Setup OAuth2 for Discord.
   app.register(oauthPlugin, discordOAuthConfig);
@@ -44,7 +51,7 @@ dotenv.config();
       resolvers: [LeagueResolver, PodcastEpisodeResolver],
       authChecker: customAuthChecker,
     }),
-    context: ({ req, res }) => ({ req, res, em: app.mikroorm.em.fork() }),
+    context: ({ request }) => ({ request, em: app.mikroorm.em.fork() }),
   });
   await server.start();
   app.register(server.createHandler());
