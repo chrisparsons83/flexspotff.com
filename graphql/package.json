@@ -37,6 +37,7 @@
   },
   "mikro-orm": {
     "useTsNode": true,
+    "tsConfigPath": "./tsconfig.json",
     "configPaths": [
       "./src/mikro-orm.config.ts",
       "./dist/mikro-orm.config.js"
