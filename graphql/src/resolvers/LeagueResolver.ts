@@ -1,4 +1,4 @@
-import { wrap } from '@mikro-orm/core';
+import { QueryOrder, wrap } from '@mikro-orm/core';
 import { Arg, Authorized, Ctx, Mutation, Query, Resolver } from 'type-graphql';
 import League from '../entities/League';
 import Axios from '../lib/axios';
@@ -39,7 +39,7 @@ export default class LeagueResolver {
 
   @Query(() => [League])
   async leagues(@Ctx() ctx: GraphQLContext): Promise<League[]> {
-    const leagues = await ctx.em.find(League, {});
+    const leagues = await ctx.em.find(League, {}, ['teams'], { tier: QueryOrder.ASC });
     return leagues;
   }
 
