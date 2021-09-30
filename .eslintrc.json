@@ -19,6 +19,7 @@
         "tsx": "never"
       }
     ],
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
     "no-undef": "off",
     "prettier/prettier": "error",
     "react/prop-types": "off",

@@ -1,6 +1,7 @@
-import { Entity, Property, Unique } from '@mikro-orm/core';
+import { Collection, Entity, OneToMany, Property, Unique } from '@mikro-orm/core';
 import { Field, Int, ObjectType } from 'type-graphql';
 import BaseEntity from './BaseEntity';
+import Team from './Team';
 
 @Entity()
 @ObjectType()
@@ -11,7 +12,17 @@ export default class League extends BaseEntity {
 
   @Field()
   @Property()
-  year: string;
+  @Unique()
+  sleeperDraftId: string;
+
+  @Field()
+  @Property()
+  @Unique()
+  sleeperLeagueId: string;
+
+  @Field(() => [Team])
+  @OneToMany('Team', 'league')
+  teams = new Collection<Team>(this);
 
   @Field(() => Int)
   @Property({ default: 2 })
@@ -19,13 +30,7 @@ export default class League extends BaseEntity {
 
   @Field()
   @Property()
-  @Unique()
-  sleeperLeagueId: string;
-
-  @Field()
-  @Property()
-  @Unique()
-  sleeperDraftId: string;
+  year: string;
 
   constructor(
     name: string,
