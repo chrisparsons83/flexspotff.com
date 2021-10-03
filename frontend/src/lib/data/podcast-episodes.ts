@@ -2,6 +2,19 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Find those panicking fantasy managers and take advantage of them! The dynamic duo delves into the notion of finding those players that managers are panicking over and seeing who is a buy low, and who is just cooked. What to do with Bobby Trees, CEH, and George Kittle? Is Darnold a buy now? Tune in and find out!`,
+    duration: 49 * 60 + 35,
+    episode: 4,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E04_-_Calmer_Than_You_Are.mp3',
+    filesize: 70310476,
+    filetype: 'audio/mpeg',
+    publishDate: '2021-10-03',
+    season: 2,
+    shownotes: '',
+    title: 'Calmer than you are!',
+  },
+  {
     description: `Bootz and trashdad gather some interesting trends based on 2 weeks of data. Progressing through each position, they find some surprising and disappointing useage of our favorite players and talk about where to go from there.`,
     duration: 51 * 60 + 3,
     episode: 3,
