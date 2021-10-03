@@ -1,7 +1,11 @@
-import { LeaderboardTable } from './LeaderboardTable';
+import { SeasonLeaderboard } from './SeasonLeaderboard';
 
-const Leaderboard = () => {
-  return <LeaderboardTable />;
+const Leaderboard: React.FC = () => {
+  return (
+    <>
+      <SeasonLeaderboard />
+    </>
+  );
 };
 
 export { Leaderboard };

@@ -1,4 +1,4 @@
-const API_SERVER = process.env.API_SERVER || `http://localhost:4000`;
+const API_SERVER = process.env.NEXT_PUBLIC_API_SERVER || `http://localhost:3001`;
 
 module.exports = {
   reactStrictMode: true,

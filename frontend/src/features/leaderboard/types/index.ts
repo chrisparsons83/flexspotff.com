@@ -1,9 +1,14 @@
-export type StandingsRow = {
-  rank: number;
+export type LeaderboardRow = {
   name: string;
-  leagueName: string;
-  weekPf: number;
-  weekPa: number;
-  seasonPf: number;
-  seasonPa: number;
+  league: {
+    name: string;
+  };
+  wins: number;
+  losses: number;
+  pointsFor: number;
+  pointsAgainst: number;
+};
+
+export type SeasonLeaderboardResponse = {
+  teams: LeaderboardRow[];
 };

@@ -1,18 +1,26 @@
 import { Box, Center, Flex, SimpleGrid, Spacer, useBreakpointValue } from '@chakra-ui/react';
 import { LeagueName } from './LeagueName';
-import { StandingsRow } from '../types';
+import { LeaderboardRow } from '../types';
 
 interface Props {
-  data: StandingsRow;
+  data: LeaderboardRow;
+  rank: number;
 }
 
-const LeaderboardRow: React.FC<Props> = ({ data }) => {
-  const { rank, name, leagueName, weekPf, weekPa, seasonPf, seasonPa } = data;
+const LeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
+  const {
+    name,
+    league: { name: leagueName },
+    wins,
+    losses,
+    pointsFor,
+    pointsAgainst,
+  } = data;
   const breakpoint = useBreakpointValue({ base: null, md: 'md' });
 
   const sxWeek = {
     '&:before': {
-      content: '"W: "',
+      content: '"PF-PA: "',
     },
     '&:after': {
       content: '" –\\00a0"',
@@ -20,7 +28,7 @@ const LeaderboardRow: React.FC<Props> = ({ data }) => {
   };
   const sxSeason = {
     '&:before': {
-      content: '"S: "',
+      content: '"Record: "',
     },
     '&:after': {
       content: '" –\\00a0"',
@@ -46,17 +54,17 @@ const LeaderboardRow: React.FC<Props> = ({ data }) => {
       </Flex>
       <Flex>
         <Box w={pointsWidth} sx={weekBefore}>
-          {weekPf}
+          {pointsFor}
         </Box>
-        <Box w={pointsWidth}>{weekPa}</Box>
+        <Box w={pointsWidth}>{pointsAgainst}</Box>
         {showSpacer}
         <Box w={pointsWidth} sx={weekBetween}>
-          {seasonPf}
+          {wins}
         </Box>
-        <Box w={pointsWidth}>{seasonPa}</Box>
+        <Box w={pointsWidth}>{losses}</Box>
       </Flex>
     </SimpleGrid>
   );
 };
 
-export { LeaderboardRow };
+export { LeaderboardTableRow };

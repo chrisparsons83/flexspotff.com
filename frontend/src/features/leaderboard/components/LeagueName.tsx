@@ -6,7 +6,8 @@ interface Props {
 }
 
 const LeagueName: React.FC<Props> = ({ leagueName }) => {
-  const leagueNameClass = `${leagueName.toLowerCase()}.500`;
+  const leagueNameShort = leagueName.replace(/ .*/, '');
+  const leagueNameClass = `${leagueNameShort.toLowerCase()}.500`;
   return (
     <Text
       px={1.5}
@@ -16,7 +17,7 @@ const LeagueName: React.FC<Props> = ({ leagueName }) => {
       fontWeight="bold"
       textTransform="uppercase"
     >
-      {leagueName}
+      {leagueNameShort}
     </Text>
   );
 };
