@@ -12,6 +12,7 @@ export const getSeasonLeaderboard = async () => {
         }
         wins
         losses
+        ties
         pointsFor
         pointsAgainst
       }

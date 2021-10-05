@@ -13,6 +13,7 @@ const LeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
     league: { name: leagueName },
     wins,
     losses,
+    ties,
     pointsFor,
     pointsAgainst,
   } = data;
@@ -34,11 +35,26 @@ const LeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
       content: '" –\\00a0"',
     },
   };
+  const sxTies = {
+    '&:before': {
+      content: '"\\00a0–\\00a0"',
+    },
+  };
 
-  const pointsWidth = breakpoint === 'md' ? 0.25 : null;
+  const pointsWidth = breakpoint === 'md' ? 0.2 : null;
   const showSpacer = breakpoint !== 'md' ? <Spacer /> : null;
   const weekBefore = breakpoint !== 'md' ? sxWeek : null;
   const weekBetween = breakpoint !== 'md' ? sxSeason : null;
+  const tiesBefore = breakpoint !== 'md' ? sxTies : null;
+
+  const tiesBox =
+    ties === 0 ? (
+      <Box w={pointsWidth} />
+    ) : (
+      <Box w={pointsWidth} sx={ties > 0 ? tiesBefore : null}>
+        {ties}
+      </Box>
+    );
 
   return (
     <SimpleGrid columns={[1, null, 2]} spacingX={10} spacingY={3} mb={2} p={2} bg="brand.300">
@@ -62,6 +78,7 @@ const LeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
           {wins}
         </Box>
         <Box w={pointsWidth}>{losses}</Box>
+        {tiesBox}
       </Flex>
     </SimpleGrid>
   );

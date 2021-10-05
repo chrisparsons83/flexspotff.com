@@ -26,6 +26,10 @@ export default class Team extends BaseEntity {
   @Property({ columnType: 'float' })
   pointsFor = 0.0;
 
+  @Field(() => String)
+  @Property({ columnType: 'varchar', nullable: true })
+  sleeperOwnerId = '';
+
   @Field(() => Int)
   @Property({ columnType: 'integer' })
   ties = 0;

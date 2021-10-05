@@ -22,10 +22,11 @@ const LeaderboardHeader: React.FC = () => {
         <Box>League</Box>
       </Flex>
       <Flex>
-        <Box w={1 / 4}>PF</Box>
-        <Box w={1 / 4}>PA</Box>
-        <Box w={1 / 4}>Wins</Box>
-        <Box w={1 / 4}>Losses</Box>
+        <Box w={1 / 5}>PF</Box>
+        <Box w={1 / 5}>PA</Box>
+        <Box w={1 / 5}>Wins</Box>
+        <Box w={1 / 5}>Losses</Box>
+        <Box w={1 / 5}>Ties</Box>
       </Flex>
     </SimpleGrid>
   );
