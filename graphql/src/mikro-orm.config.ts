@@ -6,13 +6,15 @@ import League from './entities/League';
 import PodcastEpisode from './entities/PodcastEpisode';
 import Team from './entities/Team';
 import User from './entities/User';
+import Week from './entities/Week';
+import WeeklyScore from './entities/WeeklyScore';
 
 dotenv.config();
 
 const config: Options = {
   dbName: process.env.DB_NAME,
   debug: true,
-  entities: [BaseEntity, League, PodcastEpisode, Team, User],
+  entities: [BaseEntity, League, PodcastEpisode, Team, User, Week, WeeklyScore],
   host: process.env.DB_HOST,
   migrations: {
     path: 'src/migrations/',

@@ -15,6 +15,7 @@ import discordOAuthConfig from './oauth2-discord.config';
 import LeagueResolver from './resolvers/LeagueResolver';
 import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
 import TeamResolver from './resolvers/TeamResolver';
+import WeeklyScoreResolver from './resolvers/WeeklyScoreResolver';
 import authRoutes from './routes/auth';
 
 // Load env file first.
@@ -49,7 +50,7 @@ dotenv.config();
   // Setup ApolloServer
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [LeagueResolver, PodcastEpisodeResolver, TeamResolver],
+      resolvers: [LeagueResolver, PodcastEpisodeResolver, TeamResolver, WeeklyScoreResolver],
       authChecker: customAuthChecker,
     }),
     context: ({ request }) => ({ request, em: app.mikroorm.em.fork() }),

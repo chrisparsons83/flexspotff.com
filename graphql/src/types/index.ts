@@ -39,6 +39,14 @@ export type SleeperLeague = {
   avatar: string;
 };
 
+export type SleeperMatchup = {
+  starters: string[];
+  roster_id: number;
+  players: string[];
+  matchup_id: number;
+  points: number;
+};
+
 export type SleeperRoster = {
   starters: string[];
   settings: {

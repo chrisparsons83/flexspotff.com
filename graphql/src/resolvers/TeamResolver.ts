@@ -32,6 +32,7 @@ export default class TeamResolver {
         newTeam.wins = roster.settings.wins;
         newTeam.ties = roster.settings.ties;
         newTeam.losses = roster.settings.losses;
+        newTeam.rosterId = roster.roster_id;
         newTeam.sleeperOwnerId = roster.owner_id;
         newTeam.pointsFor = (100 * roster.settings.fpts + roster.settings.fpts_decimal) / 100;
         newTeam.pointsAgainst =
@@ -81,6 +82,7 @@ export default class TeamResolver {
           pointsFor: (100 * roster.settings.fpts + roster.settings.fpts_decimal) / 100,
           pointsAgainst:
             (100 * roster.settings.fpts_against + roster.settings.fpts_against_decimal) / 100,
+          rosterId: roster.roster_id,
         });
         ctx.em.persist(newTeam);
       }
