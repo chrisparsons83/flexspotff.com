@@ -2,6 +2,26 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Through the eyes of spreadsheets, scotch, and absolutely zero film, we find that some trends are solidifying. It's a great time to look deeper and determine if those trends have true staying power. Chris, our resident Discord mod and technical MacGyver, joins us to talk about the rookie wide receivers and what underlying stats are telling us about their season-long potential. We'll also investigate the running game across the NFL, and discuss early outcomes of JJ Zachariason's Ambigous RB theory.`,
+    duration: 52 * 60 + 21,
+    episode: 5,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E05_-_Rookie_WR_Sieve_and_Ambig_RB_Theory.mp3',
+    filesize: 78450108,
+    filetype: 'audio/mpeg',
+    publishDate: 'Wed, 6 Oct 2021 22:00 PDT',
+    season: 2,
+    shownotes: `<p>References: <br />
+      <a href="https://www.4for4.com/2021/preseason/how-long-hold-rookie-wide-receiver">
+        Sam Hoppen's How Long to Hold Onto a Rookie Wide Receiver
+      </a><br />
+      <a href="https://www.numberfire.com/nfl/news/39028/fantasy-football-introducing-the-ambiguous-rb1-theory">
+        JJ Zachariason's Introducing the Ambiguous RB1 Theory
+      </a>
+    </p>`,
+    title: 'Episode 13: Week 4 - Rookie WR Evalutions',
+  },
+  {
     description: `Find those panicking fantasy managers and take advantage of them! The dynamic duo delves into the notion of finding those players that managers are panicking over and seeing who is a buy low, and who is just cooked. What to do with Bobby Trees, CEH, and George Kittle? Is Darnold a buy now? Tune in and find out!`,
     duration: 49 * 60 + 35,
     episode: 4,
@@ -12,7 +32,7 @@ const feedEpisodes: PodcastEpisode[] = [
     publishDate: '2021-10-03',
     season: 2,
     shownotes: '',
-    title: 'Calmer than you are!',
+    title: 'Episode 12: Week 3 - Calmer than you are!',
   },
   {
     description: `Bootz and trashdad gather some interesting trends based on 2 weeks of data. Progressing through each position, they find some surprising and disappointing useage of our favorite players and talk about where to go from there.`,
@@ -25,7 +45,7 @@ const feedEpisodes: PodcastEpisode[] = [
     publishDate: '2021-09-23',
     season: 2,
     shownotes: '',
-    title: 'After 2 Weeks of Data',
+    title: 'Episode 11: Week 2 - After 2 Weeks of Data',
   },
   {
     description: `Bootz and trashdad take a look the flaming garbage heap that was a preseason and try to read the ashes like tea leaves to see what we can figure out for the upcoming 2021 season. DUME returns as our voiceover! We're glad to have him back. Get your kiddie pools back out because a.) summer isn't quite over yet and you still haven't fulfilled your dream of filling the entire thing with mojito and drinking yourself into nirvana and b.) these hot takes will make you want to drink a kiddie pool full of mojito. Still not as bad as Twitter. Enjoy!`,
@@ -37,7 +57,7 @@ const feedEpisodes: PodcastEpisode[] = [
     publishDate: '2021-09-06',
     season: 2,
     shownotes: '',
-    title: `2021 Hot Takes`,
+    title: `Episode 10: Week 0 - 2021 Hot Takes`,
   },
   {
     description: `Bootz and trashdad return for Season 2! We discuss parts of the draft, Bootz's shower habits, CDCarter's intern bathroom habits, rookie feelings, best ball, draft ADP changes, Brando's milk tastes, Discord league announcements, and Over/Under hype reactions. We're so happy to be back and we're really hoping that you're reading this on Spotify or Apple podcasts!!!`,
@@ -49,7 +69,7 @@ const feedEpisodes: PodcastEpisode[] = [
     publishDate: '2021-08-31',
     season: 2,
     shownotes: '',
-    title: `The Return`,
+    title: `Episode 9: Season 2 - The Return`,
   },
 ];
 
