@@ -17,6 +17,10 @@ export default class Week extends BaseEntity {
   @Property()
   weekNumber: number;
 
+  @Field()
+  @Property({ columnType: 'varchar', default: 'regular' })
+  weekType: 'regular' | 'playoff' = 'regular';
+
   constructor(weekNumber: number, startDate: Date, endDate: Date) {
     super();
     this.endDate = endDate;
