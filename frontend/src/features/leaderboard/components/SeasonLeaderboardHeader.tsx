@@ -1,6 +1,6 @@
 import { Box, Flex, SimpleGrid, Spacer, useBreakpointValue } from '@chakra-ui/react';
 
-const LeaderboardHeader: React.FC = () => {
+const SeasonLeaderboardHeader: React.FC = () => {
   const breakpoint = useBreakpointValue({ base: 'hidden', md: 'visible' });
 
   if (breakpoint === 'hidden') return null;
@@ -32,4 +32,4 @@ const LeaderboardHeader: React.FC = () => {
   );
 };
 
-export { LeaderboardHeader };
+export { SeasonLeaderboardHeader };

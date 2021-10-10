@@ -1,4 +1,4 @@
-import { wrap } from '@mikro-orm/core';
+import { QueryOrder, wrap } from '@mikro-orm/core';
 import { Arg, Authorized, Ctx, Int, Mutation, Query, Resolver } from 'type-graphql';
 import League from '../entities/League';
 import Team from '../entities/Team';
@@ -93,7 +93,12 @@ export default class WeeklyScoreResolver {
     @Arg('week', () => Int) weekNumber: number,
     @Ctx() ctx: GraphQLContext,
   ): Promise<WeeklyScore[]> {
-    const weeklyScores = await ctx.em.find(WeeklyScore, { week: { weekNumber } }, ['team.league']);
+    const weeklyScores = await ctx.em.find(WeeklyScore, { week: { weekNumber } }, ['team.league'], {
+      points: QueryOrder.DESC,
+      team: {
+        name: QueryOrder.ASC,
+      },
+    });
     return weeklyScores;
   }
 }

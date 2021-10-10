@@ -1,16 +1,12 @@
 import useSeasonLeaderboard from '../hooks/useSeasonLeaderboard';
-import { LeaderboardTable } from './LeaderboardTable';
+import { SeasonLeaderboardTable } from './SeasonLeaderboardTable';
 
 const SeasonLeaderboard = () => {
   const { status, data, error, isFetching } = useSeasonLeaderboard();
 
   if (!data) return <div>Loading...</div>;
 
-  return (
-    <>
-      <LeaderboardTable data={data} />
-    </>
-  );
+  return <SeasonLeaderboardTable data={data} />;
 };
 
 export { SeasonLeaderboard };

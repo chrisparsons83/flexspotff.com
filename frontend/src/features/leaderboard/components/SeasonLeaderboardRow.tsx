@@ -1,13 +1,13 @@
 import { Box, Center, Flex, SimpleGrid, Spacer, useBreakpointValue } from '@chakra-ui/react';
 import { LeagueName } from './LeagueName';
-import { LeaderboardRow } from '../types';
+import { SeasonLeaderboardRow } from '../types';
 
 interface Props {
-  data: LeaderboardRow;
+  data: SeasonLeaderboardRow;
   rank: number;
 }
 
-const LeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
+const SeasonLeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
   const {
     name,
     league: { name: leagueName },
@@ -84,4 +84,4 @@ const LeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
   );
 };
 
-export { LeaderboardTableRow };
+export { SeasonLeaderboardTableRow };

@@ -5,7 +5,7 @@ const LeaderboardsPage = () => {
   return (
     <div>
       <Heading as="h1" mb={4}>
-        Season Leaderboard
+        League Leaderboards
       </Heading>
       <Leaderboard />
     </div>
