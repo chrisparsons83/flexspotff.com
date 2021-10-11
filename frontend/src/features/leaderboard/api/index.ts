@@ -24,9 +24,7 @@ export const getSeasonLeaderboard = async () => {
   return data;
 };
 
-export const getWeeklyLeaderboard = async () => {
-  const week = 5;
-
+export const getWeeklyLeaderboard = async ({ week }) => {
   const query = gql`
     query WeeklyScores($week: Int!) {
       weeklyScores(week: $week) {

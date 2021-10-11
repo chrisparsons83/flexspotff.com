@@ -8,8 +8,6 @@ interface Props {
 const WeeklyLeaderboardTable: React.FC<Props> = ({ data }) => {
   const { weeklyScores: results } = data;
 
-  console.log(results);
-
   return (
     <div>
       <WeeklyLeaderboardHeader />
