@@ -26,6 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Load Frontend .env File
+      run: |
+          echo $FRONTEND_ENV_FILE >> frontend/.env
+      shell: bash
+      env:
+        FRONTEND_ENV_FILE : ${{secrets.FRONTEND_ENV_FILE}}
     - name: Run NPM CI Frontend
       run: npm ci
       working-directory: frontend
