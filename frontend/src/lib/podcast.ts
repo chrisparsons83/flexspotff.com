@@ -49,6 +49,7 @@ export const generatePodcastFeed = async () => {
       },
       itunesAuthor: feedOptions.author,
       itunesDuration: episode.duration,
+      itunesSummary: episode.shownotes,
       itunesTitle: episode.title,
       url: `https://www.flexspotff.com/podcast/${episode.season}/${episode.episode}`,
     };

@@ -2,6 +2,23 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Spooky season! We're here to talk actionable advice for you and your injury-riddled team. Mostly fringe-relevance RBs, but QBs and ghosts get mentioned too.`,
+    duration: 63 * 60 + 39,
+    episode: 6,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E06_-_Week_5_QBs_fringe_RBs_and_ghosts.mp3',
+    filesize: 77045637,
+    filetype: 'audio/mpeg',
+    publishDate: 'Friday, 15 Oct 2021 22:00 PDT',
+    season: 2,
+    shownotes: `<p>Spooky season! Happy Halloween season to all (or if you're my wife who recently turned on the Christmas playlists from Spotify already... Merry Christma-ween? The dynamic duo spend an inordinate amount of time talking about Quarterbacks and then move into fringe RB evaluation. Bootz brings the numbers and dr.trashdad brings some film review of some actionable RB replacements since the injury bug is spreading faster than the Delta variant.</p><p>Find us on Twitter!</p><ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: 'Episode 14: Week 5 - QBs, Fringe RBs, and Ghosts!',
+  },
+  {
     description: `Through the eyes of spreadsheets, scotch, and absolutely zero film, we find that some trends are solidifying. It's a great time to look deeper and determine if those trends have true staying power. Chris, our resident Discord mod and technical MacGyver, joins us to talk about the rookie wide receivers and what underlying stats are telling us about their season-long potential. We'll also investigate the running game across the NFL, and discuss early outcomes of JJ Zachariason's Ambigous RB theory.`,
     duration: 52 * 60 + 21,
     episode: 5,
