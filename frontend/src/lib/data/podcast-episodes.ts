@@ -28,7 +28,7 @@ const feedEpisodes: PodcastEpisode[] = [
     filetype: 'audio/mpeg',
     publishDate: 'Wed, 6 Oct 2021 22:00 PDT',
     season: 2,
-    shownotes: `<p>References: <br />
+    shownotes: `<p>Through the eyes of spreadsheets, scotch, and absolutely zero film, we find that some trends are solidifying. It's a great time to look deeper and determine if those trends have true staying power. Chris, our resident Discord mod and technical MacGyver, joins us to talk about the rookie wide receivers and what underlying stats are telling us about their season-long potential. We'll also investigate the running game across the NFL, and discuss early outcomes of JJ Zachariason's Ambigous RB theory.</p><p>References: <br />
       <a href="https://www.4for4.com/2021/preseason/how-long-hold-rookie-wide-receiver">
         Sam Hoppen's How Long to Hold Onto a Rookie Wide Receiver
       </a><br />
