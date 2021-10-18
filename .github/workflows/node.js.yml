@@ -28,7 +28,9 @@ jobs:
         cache: 'npm'
     - name: Load Frontend .env File
       run: |
-          echo $FRONTEND_ENV_FILE >> frontend/.env
+          touch frontend/.env
+          echo API_SERVER=${{ secrets.API_SERVER }}  >> frontend/.env
+          echo NEXT_PUBLIC_API_SERVER=${{ secrets.API_SERVER }} >> frontend/.env
       shell: bash
       env:
         FRONTEND_ENV_FILE : ${{secrets.FRONTEND_ENV_FILE}}
