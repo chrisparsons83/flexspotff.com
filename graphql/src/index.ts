@@ -13,6 +13,7 @@ import hookAddUser from './lib/hook-adduser';
 import config from './mikro-orm.config';
 import discordOAuthConfig from './oauth2-discord.config';
 import LeagueResolver from './resolvers/LeagueResolver';
+import PlayerResolver from './resolvers/PlayerResolver';
 import PodcastEpisodeResolver from './resolvers/PodcastEpisodeResolver';
 import TeamResolver from './resolvers/TeamResolver';
 import WeeklyScoreResolver from './resolvers/WeeklyScoreResolver';
@@ -50,7 +51,13 @@ dotenv.config();
   // Setup ApolloServer
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [LeagueResolver, PodcastEpisodeResolver, TeamResolver, WeeklyScoreResolver],
+      resolvers: [
+        LeagueResolver,
+        PlayerResolver,
+        PodcastEpisodeResolver,
+        TeamResolver,
+        WeeklyScoreResolver,
+      ],
       authChecker: customAuthChecker,
     }),
     context: ({ request }) => ({ request, em: app.mikroorm.em.fork() }),

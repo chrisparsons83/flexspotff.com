@@ -77,6 +77,19 @@ export type SleeperRoster = {
   co_owners: string[] | null;
 };
 
+export type SleeperPlayer = {
+  first_name: string;
+  last_name: string;
+  full_name: string;
+  active: boolean;
+  fantasy_positions: string[];
+  team: string;
+};
+
+export type SleeperPlayers = {
+  [key: string]: SleeperPlayer;
+};
+
 export type SleeperUser = {
   user_id: string;
   settings: unknown;
