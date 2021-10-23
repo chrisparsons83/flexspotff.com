@@ -2,6 +2,23 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Bootz is joined this week by Chris as a guest host, and the two data guys spend a lot of time talking about PFF's film-based passer ratings and how they are predictive in terms of season-long team-level offense. We also spend some time discussing an interleague fantasy football tournament, and ways to keep your leagues from going stale over the years.`,
+    duration: 53 * 60 + 18,
+    episode: 7,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E07_-_Week_6_Player_Valuations_2_guys_1_cup.mp3',
+    filesize: 68790628,
+    filetype: 'audio/mpeg',
+    publishDate: 'Friday, 22 Oct 2021 22:00 PDT',
+    season: 2,
+    shownotes: `<p>Bootz is joined this week by Chris as a guest host, and the two data guys spend a lot of time talking about PFF's film-based passer ratings and how they are predictive in terms of season-long team-level offense. We also spend some time discussing an interleague fantasy football tournament, and ways to keep your leagues from going stale over the years.</p><p>Find us on Twitter!</p><ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: 'Episode 15: Week 6 - Looking at NFL Team Offenses through PFF QB Passing Ratings',
+  },
+  {
     description: `Spooky season! We're here to talk actionable advice for you and your injury-riddled team. Mostly fringe-relevance RBs, but QBs and ghosts get mentioned too.`,
     duration: 63 * 60 + 39,
     episode: 6,
