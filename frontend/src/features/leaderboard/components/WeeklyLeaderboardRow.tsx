@@ -95,7 +95,8 @@ const WeeklyLeaderboardTableRow: React.FC<Props> = ({ data, rank }) => {
                   const key = `starter-${teamName}-${starter.sleeperId}`;
                   return (
                     <p key={key}>
-                      {starter.basePosition} - {starter.firstName} {starter.lastName}
+                      {starter.basePosition} - {starter.firstName} {starter.lastName} (
+                      {starter.team})
                     </p>
                   );
                 })}
