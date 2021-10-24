@@ -82,6 +82,7 @@ export type SleeperPlayer = {
   last_name: string;
   full_name: string;
   active: boolean;
+  position: string;
   fantasy_positions: string[];
   team: string;
 };

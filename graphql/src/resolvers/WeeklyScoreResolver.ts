@@ -1,6 +1,7 @@
 import { QueryOrder, wrap } from '@mikro-orm/core';
 import { Arg, Authorized, Ctx, Int, Mutation, Query, Resolver } from 'type-graphql';
 import League from '../entities/League';
+import Player from '../entities/Player';
 import Team from '../entities/Team';
 import Week from '../entities/Week';
 import WeeklyScore from '../entities/WeeklyScore';
@@ -77,8 +78,16 @@ export default class WeeklyScoreResolver {
               weekNumber,
             },
           },
-          ['team'],
+          ['team', 'starters'],
         );
+        // eslint-disable-next-line no-await-in-loop
+        const sleeperStartingPlayers = await ctx.em.find(Player, {
+          sleeperId: { $in: matchup.starters.filter((x) => x !== '0') },
+        });
+        weeklyScore.starters.removeAll();
+        sleeperStartingPlayers.forEach((player) => {
+          weeklyScore.starters.add(player);
+        });
         wrap(weeklyScore).assign({ points: matchup.points });
         ctx.em.persist(weeklyScore);
       }
@@ -93,12 +102,17 @@ export default class WeeklyScoreResolver {
     @Arg('week', () => Int) weekNumber: number,
     @Ctx() ctx: GraphQLContext,
   ): Promise<WeeklyScore[]> {
-    const weeklyScores = await ctx.em.find(WeeklyScore, { week: { weekNumber } }, ['team.league'], {
-      points: QueryOrder.DESC,
-      team: {
-        name: QueryOrder.ASC,
+    const weeklyScores = await ctx.em.find(
+      WeeklyScore,
+      { week: { weekNumber } },
+      ['team.league', 'starters'],
+      {
+        points: QueryOrder.DESC,
+        team: {
+          name: QueryOrder.ASC,
+        },
       },
-    });
+    );
     return weeklyScores;
   }
 }

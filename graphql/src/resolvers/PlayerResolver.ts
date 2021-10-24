@@ -16,13 +16,18 @@ export default class PlayerResolver {
       // eslint-disable-next-line no-await-in-loop
       let player = await ctx.em.findOne(Player, { sleeperId });
 
-      if (player) player.team = sleeperPlayer.team;
+      if (player) {
+        player.team = sleeperPlayer.team;
+        player.basePosition = sleeperPlayer.position;
+      }
+
       if (!player) {
         player = new Player(
           sleeperId,
           sleeperPlayer.first_name,
           sleeperPlayer.last_name,
           sleeperPlayer.team,
+          sleeperPlayer.position,
         );
       }
       ctx.em.persist(player);

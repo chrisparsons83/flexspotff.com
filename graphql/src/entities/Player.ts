@@ -9,6 +9,10 @@ export default class Player {
   sleeperId: string;
 
   @Field()
+  @Property({ nullable: true })
+  basePosition: string;
+
+  @Field()
   @Property()
   firstName: string;
 
@@ -20,10 +24,17 @@ export default class Player {
   @Property({ nullable: true })
   team: string;
 
-  constructor(sleeperId: string, firstName: string, lastName: string, team: string) {
+  constructor(
+    sleeperId: string,
+    firstName: string,
+    lastName: string,
+    team: string,
+    basePosition: string,
+  ) {
     this.sleeperId = sleeperId;
     this.firstName = firstName;
     this.lastName = lastName;
     this.team = team;
+    this.basePosition = basePosition;
   }
 }

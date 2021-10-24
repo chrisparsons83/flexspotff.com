@@ -1,6 +1,7 @@
-import { Entity, ManyToOne, Property } from '@mikro-orm/core';
+import { Collection, Entity, ManyToMany, ManyToOne, Property } from '@mikro-orm/core';
 import { Field, Float, Int, ObjectType } from 'type-graphql';
 import BaseEntity from './BaseEntity';
+import Player from './Player';
 import Team from './Team';
 import Week from './Week';
 
@@ -26,6 +27,10 @@ export default class WeeklyScore extends BaseEntity {
   @Field(() => Int)
   @Property({ columnType: 'integer' })
   sleeperMatchupId: number;
+
+  @Field(() => [Player])
+  @ManyToMany('Player')
+  starters = new Collection<Player>(this);
 
   @Field(() => Team)
   @ManyToOne('Team')
