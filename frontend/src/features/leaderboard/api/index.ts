@@ -39,6 +39,13 @@ export const getWeeklyLeaderboard = async ({ week }) => {
             name
           }
         }
+        starters {
+          sleeperId
+          firstName
+          lastName
+          basePosition
+          team
+        }
         points
       }
     }

@@ -26,9 +26,18 @@ export type WeeklyLeaderboardRow = {
       name: string;
     };
   };
+  starters: Player[];
   points: number;
 };
 
 export type WeeklyLeaderboardResponse = {
   weeklyScores: WeeklyLeaderboardRow[];
+};
+
+export type Player = {
+  sleeperId: string;
+  firstName: string;
+  lastName: string;
+  team: string;
+  basePosition: string;
 };
