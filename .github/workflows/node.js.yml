@@ -34,6 +34,26 @@ jobs:
       shell: bash
       env:
         FRONTEND_ENV_FILE : ${{secrets.FRONTEND_ENV_FILE}}
+    - name: Load Backend .env File
+      run: |
+          touch graphql/.env
+          echo BACKEND_URL=${{ secrets.API_SERVER }}  >> graphql/.env
+          echo COOKIE_DOMAIN=${{ secrets.COOKIE_DOMAIN }} >> graphql/.env
+          echo DB_HOST=${{ secrets.DB_HOST }} >> graphql/.env
+          echo DB_NAME=${{ secrets.DB_NAME }} >> graphql/.env
+          echo DB_PASSWORD=${{ secrets.DB_PASSWORD }} >> graphql/.env
+          echo DB_PORT=${{ secrets.DB_PORT }} >> graphql/.env
+          echo DB_TYPE=${{ secrets.DB_TYPE }} >> graphql/.env
+          echo DB_USER=${{ secrets.DB_USER }} >> graphql/.env
+          echo DISCORD_CLIENT_ID=${{ secrets.DISCORD_CLIENT_ID }} >> graphql/.env
+          echo DISCORD_CLIENT_SECRET=${{ secrets.DISCORD_CLIENT_SECRET }} >> graphql/.env
+          echo FASTIFY_COOKIE_KEY=${{ secrets.FASTIFY_COOKIE_KEY }} >> graphql/.env
+          echo FRONTEND_URL=${{ secrets.FRONTEND_URL }} >> graphql/.env
+          echo GRAPHQL_PORT=${{ secrets.GRAPHQL_PORT }} >> graphql/.env
+          echo JWT_KEY=${{ secrets.JWT_KEY }} >> graphql/.env
+      shell: bash
+      env:
+        BACKEND_ENV_FILE : ${{secrets.BACKEND_ENV_FILE}}
     - name: Run NPM CI Frontend
       run: npm ci
       working-directory: frontend
