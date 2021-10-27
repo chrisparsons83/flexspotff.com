@@ -82,13 +82,9 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-- Optional: docker and docker-compose.
+- Node >= v14
+- Some sort of database, preferably postgres.
+- Optional: docker and docker-compose. This sets up postgres for you currently.
 
 ### Installation
 
@@ -100,7 +96,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    npm run install:frontend
-   npm run install:backend
+   npm run install:graphql
    ```
 3. Run the database. You can get a sql dump and put it in .db-load before running.
    ```sh
@@ -108,7 +104,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 4. Set your environmental variables. For dev, you'll likely just want to use the .env setup.
    ```sh
-   cp ./backend/.env.sample ./backend/.env
+   cp ./graphql/.env.sample ./graphql/.env
    ```
    - Update the following variables when you make this copy:
      - DISCORD_CLIENT_ID
@@ -124,22 +120,10 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    cd frontend && npm run dev
    ```
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-TODO: Update this copy.
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-Changes to the database schema are done via [MikroORM Migrations](https://mikro-orm.io/docs/migrations/).
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-See the [open issues](https://github.com/chrisparsons83/flexspotff.com/issues) for a list of proposed features (and known issues).
+7. To run the backend GraphQL server:
+   ```sh
+   cd graphql && npm run dev
+   ```
 
 <!-- CONTRIBUTING -->
 

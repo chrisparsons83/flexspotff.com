@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install:frontend": "cd frontend && npm install",
-    "install:backend": "cd backend && npm install",
+    "install:graphql": "cd graphql && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
