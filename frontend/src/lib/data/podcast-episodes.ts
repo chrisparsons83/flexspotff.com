@@ -2,6 +2,23 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Dr.trashdad's return from his humanitarian mission, coach of the year talk, and a way-too-early 2022 Rookie Superflex draft discussion to earmark our favorite players and see where they end up in the draft`,
+    duration: 37 * 60 + 58,
+    episode: 8,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E08_-_Week_7_Early_2022_Rookie_Mock.mp3',
+    filesize: 48208357,
+    filetype: 'audio/mpeg',
+    publishDate: 'Thursday, 28 Oct 2021 22:00 PDT',
+    season: 2,
+    shownotes: `<p>Dr.trashdad's return from his humanitarian mission, coach of the year talk, and a way-too-early 2022 Rookie Superflex draft discussion to earmark our favorite players and see where they end up in the draft.</p><p>Find us on Twitter!</p><ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: `Episode 16: Week 7 - 2022 Rookie draft that's way too early but fun anyway`,
+  },
+  {
     description: `Bootz is joined this week by Chris as a guest host, and the two data guys spend a lot of time talking about PFF's film-based passer ratings and how they are predictive in terms of season-long team-level offense. We also spend some time discussing an interleague fantasy football tournament, and ways to keep your leagues from going stale over the years.`,
     duration: 53 * 60 + 18,
     episode: 7,
