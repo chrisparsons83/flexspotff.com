@@ -2,7 +2,7 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
-    description: `Dr.trashdad's return from his humanitarian mission, coach of the year talk, and a way-too-early 2022 Rookie Superflex draft discussion to earmark our favorite players and see where they end up in the draft`,
+    description: `Dr.trashdad's return from his humanitarian mission, coach of the year talk, and a way-too-early 2022 Rookie Superflex draft discussion to earmark our favorite players and see where they end up in the draft.`,
     duration: 37 * 60 + 58,
     episode: 8,
     filepath:
