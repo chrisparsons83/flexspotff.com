@@ -22,6 +22,9 @@ const MenuLinks: React.FC<Props> = ({ isOpen, toggle }) => {
         <MenuItem to="/leagues/leaderboards" toggle={toggle}>
           Leaderboard
         </MenuItem>
+        <MenuItem to="/leagues/standings" toggle={toggle}>
+          Standings
+        </MenuItem>
         <MenuItem to="/leagues/adp" toggle={toggle}>
           ADP
         </MenuItem>

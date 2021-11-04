@@ -18,8 +18,6 @@ const StandingsTable: React.FC<Props> = ({ data }) => {
     return b.pointsFor - a.pointsFor;
   });
 
-  console.log(teams);
-
   return (
     <>
       <Heading as="h2" size="md">

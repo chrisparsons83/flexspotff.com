@@ -7,7 +7,9 @@ const Standings: React.FC = () => {
   if (!data) return <div>Loading...</div>;
 
   const tierOne = data.leagues.filter((league) => league.tier === 1);
-  const tierTwo = data.leagues.filter((league) => league.tier === 2);
+  const tierTwo = data.leagues
+    .filter((league) => league.tier === 2)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <>
