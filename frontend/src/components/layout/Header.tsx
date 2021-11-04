@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Container } from '@chakra-ui/react';
 import Logo from './Logo';
+import MenuLinks from './MenuLinks';
 import MenuToggle from './MenuToggle';
+import NavBarContainer from './NavBarContainer';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +12,11 @@ const Header = () => {
 
   return (
     <Container maxW="container.lg">
-      <Logo />
-      <MenuToggle toggle={toggle} isOpen={isOpen} />
+      <NavBarContainer>
+        <Logo />
+        <MenuToggle toggle={toggle} isOpen={isOpen} />
+        <MenuLinks toggle={toggle} isOpen={isOpen} />
+      </NavBarContainer>
     </Container>
   );
 };
