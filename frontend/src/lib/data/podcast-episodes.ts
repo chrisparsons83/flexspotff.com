@@ -2,7 +2,7 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
-    description: `Dr. Trashdad and Bootz return to discuss everything from balloons to QB streaming. They go over their pitiful QB Streaming strategies, alcohol preferences, and the the mayhem that is NFL news this past week. Between Dan Snyders emails and Aaron Rodgers immunization status we find time to discuss our favorite potential defensive moves to improve our own NFL teams.`,
+    description: `Bootz and dr.trashdad examine the possibly changing meta of the now meta of "QB streaming" as made popular by JJZ. Then we play a game of making the best defense possible by moving two pieces.`,
     duration: 38 * 60 + 39,
     episode: 9,
     filepath:
