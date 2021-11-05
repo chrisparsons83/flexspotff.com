@@ -2,6 +2,23 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Dr. Trashdad and Bootz return to discuss everything from balloons to QB streaming. They go over their pitiful QB Streaming strategies, alcohol preferences, and the the mayhem that is NFL news this past week. Between Dan Snyders emails and Aaron Rodgers immunization status we find time to discuss our favorite potential defensive moves to improve our own NFL teams.`,
+    duration: 38 * 60 + 39,
+    episode: 9,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E09_-_Week_8_QB_Streaming_is_still_totally_viable_right.mp3',
+    filesize: 48763877,
+    filetype: 'audio/mpeg',
+    publishDate: 'Thursday, 4 Nov 2021 22:00 PDT',
+    season: 2,
+    shownotes: `<p>Dr. Trashdad and Bootz return to discuss everything from balloons to QB streaming. They go over their pitiful QB Streaming strategies, alcohol preferences, and the the mayhem that is NFL news this past week. Between Dan Snyders emails and Aaron Rodgers immunization status we find time to discuss our favorite potential defensive moves to improve our own NFL teams.</p><p>Find us on Twitter!</p><ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: `Episode 17: Week 8 - QB streaming is totally still viable... right?`,
+  },
+  {
     description: `Dr.trashdad's return from his humanitarian mission, coach of the year talk, and a way-too-early 2022 Rookie Superflex draft discussion to earmark our favorite players and see where they end up in the draft.`,
     duration: 37 * 60 + 58,
     episode: 8,
