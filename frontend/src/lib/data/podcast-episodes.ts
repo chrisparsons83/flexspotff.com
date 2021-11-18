@@ -2,6 +2,23 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Bootz and Dr. Trashdad return after a week long hiatus to discuss which teams are squads and total frauds. They bring in up and coming Podcaster, future ESPN commentator, future ex-ESPN commentator (fired with cause), and proud owner of an Apple Store banning, Busty, aka Chuck Bass.`,
+    duration: 55 * 60 + 42,
+    episode: 10,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E10_-_Week_10_Frauds_and_Squads.mp3',
+    filesize: 63998353,
+    filetype: 'audio/mpeg',
+    publishDate: 'Thursday, 18 Nov 2021 12:00 PST',
+    season: 2,
+    shownotes: `<p>Bootz and Dr. Trashdad return after a week long hiatus to discuss which teams are squads and total frauds. They bring in up and coming Podcaster, future ESPN commentator, future ex-ESPN commentator (fired with cause), and proud owner of an Apple Store banning, Busty, aka Chuck Bass.</p><p>Find us on Twitter!</p><ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: `Episode 18: Week 11 - Frauds and Squads`,
+  },
+  {
     description: `Bootz and dr.trashdad examine the possibly changing meta of the now meta of "QB streaming" as made popular by JJZ. Then we play a game of making the best defense possible by moving two pieces.`,
     duration: 38 * 60 + 39,
     episode: 9,

@@ -2,7 +2,6 @@ import { ApolloServer } from 'apollo-server-fastify';
 import dotenv from 'dotenv';
 import fastify from 'fastify';
 import cookie, { FastifyCookieOptions } from 'fastify-cookie';
-import fastifyCors from 'fastify-cors';
 import oauthPlugin from 'fastify-oauth2';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
@@ -28,12 +27,6 @@ dotenv.config();
 
   // Setup MikroORM.
   app.register(fastifyMikroorm, config);
-
-  // Setup CORS.
-  app.register(fastifyCors, {
-    origin: '*',
-    credentials: true,
-  });
 
   // Setup Fastify Cookie
   app.register(cookie, {
