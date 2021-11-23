@@ -56,13 +56,13 @@ const routes = async (fastify: FastifyInstance) => {
 
       // Log user in by creating JWT
       // eslint-disable-next-line no-underscore-dangle
-      const userToken = sign({ userId: localUser._id }, process.env.JWT_KEY, { expiresIn: '365d' });
+      const userToken = sign({ userId: localUser._id }, process.env.JWT_KEY, { expiresIn: '1d' });
 
       // Redirect to homepage
       reply
         .cookie('token', userToken, {
           domain: process.env.COOKIE_DOMAIN,
-          expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000), // 7 days
+          expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), // 1 day
           httpOnly: true,
           path: '/',
           secure: true,
