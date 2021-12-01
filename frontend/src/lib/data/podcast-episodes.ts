@@ -2,6 +2,23 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `What makes a great Tight End? Is it speed? is it athletics? Is it bars? Is it squats and yoga pants?  Bootz joins dr.trashdad to continue the conversation from last year and see how the stack up. Also explosive shrimp alfredo.`,
+    duration: 46 * 60 + 56,
+    episode: 11,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E11_-_Week_11_Tight_End_Special_2:_Electric_Boogaloo.mp3',
+    filesize: 51516315,
+    filetype: 'audio/mpeg',
+    publishDate: 'Tuesday, 30 Nov 2021 8:00 PST',
+    season: 2,
+    shownotes: `<p>(We released this episode late - thanks for being patient with us during the holidays!) What makes a great Tight End? Is it speed? is it athletics? Is it bars? Is it squats and yoga pants?  Bootz joins dr.trashdad to continue the conversation from last year and see how the stack up. Also explosive shrimp alfredo. Does Lamar have a small shellfish allergy? What are you drinking tonight? Tweet us your drink and the last NFT you bought!</p><ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: `Episode 19: Tight End Special part 2: Electric Boogaloo`,
+  },
+  {
     description: `Bootz and Dr. Trashdad return after a week long hiatus to discuss which teams are squads and total frauds. They bring in up and coming Podcaster, future ESPN commentator, future ex-ESPN commentator (fired with cause), and proud owner of an Apple Store banning, Busty, aka Chuck Bass.`,
     duration: 55 * 60 + 42,
     episode: 10,

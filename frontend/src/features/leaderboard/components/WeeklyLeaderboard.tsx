@@ -5,7 +5,7 @@ import { WeeklyLeaderboardTable } from '..';
 import useWeeklyLeaderboard from '../hooks/useWeeklyLeaderboard';
 
 const WeeklyLeaderboard = () => {
-  const [week, setWeek] = useState(12);
+  const [week, setWeek] = useState(13);
   const { status, data, error, isFetching } = useWeeklyLeaderboard({ week });
 
   const weeksArray = Array.from({ length: 17 }, (_x, i) => i + 1);
