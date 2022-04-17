@@ -2,6 +2,27 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Bootz and drtrashdad dive into the metrics and methodology of measuring rookie prospects for dynasty drafting before the draft order is known. `,
+    duration: 31 * 60 + 19,
+    episode: 12,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E12_-_Offseason_1_-_Process_Evalutation_2022.mp3',
+    filesize: 36106459,
+    filetype: 'audio/mpeg',
+    publishDate: 'Friday, 15 Apr 2022 8:00 PST',
+    season: 2,
+    shownotes: `<p>Bootz and drtrashdad dive into the metrics and methodology of measuring rookie prospects for dynasty drafting before the draft order is known. Removing indicators that are outdated and replacing them with more telling indicators and metrics to help optimize your dynasty drafts in the upcoming weeks! Here are the articles referenced in the show today:</p><ul>
+    <li><a href="https://www.playerprofiler.com/article/thinking-about-thinking-prospecting-through-humility/">https://www.playerprofiler.com/article/thinking-about-thinking-prospecting-through-humility/</a></li>
+    <li><a href="https://dynastydaydream.wordpress.com/2020/03/26/why-ryptpa-matters/">https://dynastydaydream.wordpress.com/2020/03/26/why-ryptpa-matters/</a></li>
+    </ul>
+    <ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: `Episode 20: Offseason Special Part 1 - Process Evaluation for 2022`,
+  },
+  {
     description: `What makes a great Tight End? Is it speed? is it athletics? Is it bars? Is it squats and yoga pants?  Bootz joins dr.trashdad to continue the conversation from last year and see how the stack up. Also explosive shrimp alfredo.`,
     duration: 46 * 60 + 56,
     episode: 11,
