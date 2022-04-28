@@ -2,6 +2,24 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Bootz and drtrashdad jump head first into the NFL draft while navigating through bust, charlatans, and future used car salesmen.`,
+    duration: 45 * 60 + 21,
+    episode: 13,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E13_-_Offseason_2_-_NFL-Draft.mp3',
+    filesize: 53713251,
+    filetype: 'audio/mpeg',
+    publishDate: 'Wednesday, 27 Apr 2022 8:00 PST',
+    season: 2,
+    shownotes: `<p>Bootz and drtrashdad jump head first into the NFL draft while navigating through bust, charlatans, and future used car salesmen. In this episode we will take a deeper dive into a few of our favorite prospects while looking at them from the lens of the upcoming NFL draft. Bootz discusses fancy numbers that everyone is pretty sure are just made up while drtrashdad tells us why draft capitol is the ultimate film grade.</p>
+    <ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: `Episode 21: Offseason Special Part 2 - NFL Draft`,
+  },
+  {
     description: `Bootz and drtrashdad dive into the metrics and methodology of measuring rookie prospects for dynasty drafting before the draft order is known. `,
     duration: 31 * 60 + 19,
     episode: 12,
