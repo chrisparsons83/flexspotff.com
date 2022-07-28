@@ -2,6 +2,24 @@ import { PodcastEpisode } from '../../types';
 
 const feedEpisodes: PodcastEpisode[] = [
   {
+    description: `Bootz and drtrashdad give their thoughts on the NFL draft while discussing rookie WR player props, ask themselves if size matters, and the meaning of life.`,
+    duration: 40 * 60 + 45,
+    episode: 14,
+    filepath:
+      'https://ewr1.vultrobjects.com/flexspotff-podcast/TTF_S02E14_-_Offseason_3_-_Post-Draft-Passcatchers.mp3',
+    filesize: 43521704,
+    filetype: 'audio/mpeg',
+    publishDate: 'Thursday, 28 July 2022 8:00 PST',
+    season: 2,
+    shownotes: `<p>Bootz and drtrashdad give their thoughts on the NFL draft while discussing rookie WR player props, ask themselves if size matters, and the meaning of life. They discuss their favorite short king Wan'Dale Robinson and Mark Andrews in great detail while pondering if Kyle Shanahan is right that none of this matters because we may not even be here Sunday. Despite trashdads best attempts, Bootz manages to bring everything back to best ball as his brain has fully rotted embracing variance of a 400,000 person tournament. Tune in to listen as we dive into these and many more of lifes mysterious questions. Follow us on Twitter for best ball takes and chickens.</p>
+    <ul>
+    <li><a href="https://twitter.com/bootzfantasy">@bootzfantasy</a></li>
+    <li><a href="https://twitter.com/drtrashdad">@drtrashdad</a></li>
+    </ul>
+    `,
+    title: `Episode 22: Offseason Special Part 3 - Post NFL Draft`,
+  },
+  {
     description: `Bootz and drtrashdad jump head first into the NFL draft while navigating through bust, charlatans, and future used car salesmen.`,
     duration: 45 * 60 + 21,
     episode: 13,
